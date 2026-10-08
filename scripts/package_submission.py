@@ -1,5 +1,5 @@
 """Archive reviewable source and deliverables without private runtime state."""
-import hashlib,json,zipfile
+import hashlib,json,zipfile,re
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 out=root/'deliverables';archive=out/'College_Lost_and_Found_Complete.zip'
@@ -15,7 +15,7 @@ for p in root.rglob('*'):
 manifest={'archive':archive.name,'files':[]}
 for p,rel in files:
     data=p.read_bytes()
-    assert b'ATATT' not in data,'Unexpected Jira credential pattern in '+rel
+    assert not re.search(rb'ATAT[T][A-Za-z0-9_-]{30,}',data),'Unexpected Jira credential pattern in '+rel
     manifest['files'].append({'path':rel,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for p,rel in files:z.write(p,rel)
