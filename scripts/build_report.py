@@ -33,10 +33,15 @@ def h(text,level=2):
     doc.add_heading(text,level);md.append('#'*level+' '+text+'\n')
 
 def p(text):
-    doc.add_paragraph(text);md.append(text+'\n')
+    para=doc.add_paragraph(text)
+    para.paragraph_format.keep_together=True
+    md.append(text+'\n')
 
 def bullets(lines):
-    for text in lines:doc.add_paragraph(text,style='List Bullet');md.append('- '+text)
+    for i,text in enumerate(lines):
+        para=doc.add_paragraph(text,style='List Bullet')
+        para.paragraph_format.keep_with_next=i<len(lines)-1
+        md.append('- '+text)
     md.append('')
 
 def table(headers,rows,name=None,widths=None):
@@ -68,7 +73,9 @@ def table(headers,rows,name=None,widths=None):
         if ri==0:
             repeat=OxmlElement('w:tblHeader');row._tr.get_or_add_trPr().append(repeat)
         no_split=OxmlElement('w:cantSplit');row._tr.get_or_add_trPr().append(no_split)
-    doc.add_paragraph().paragraph_format.space_after=Pt(1)
+    spacer=doc.add_paragraph();spacer.paragraph_format.space_after=Pt(1)
+    spacer.paragraph_format.line_spacing=Pt(1)
+    spacer.add_run().font.size=Pt(1)
     md.append('| '+' | '.join(headers)+' |');md.append('| '+' | '.join(['---']*len(headers))+' |')
     for row in rows:md.append('| '+' | '.join(str(v).replace('\n',' / ').replace('|','/') for v in row)+' |')
     md.append('')
@@ -85,11 +92,16 @@ def image(name,caption):
     with Image.open(path) as im:w,hh=im.size
     width=min(6.75,6.8*w/hh)
     doc.add_picture(str(path),width=Inches(width))
+    doc.paragraphs[-1].paragraph_format.keep_with_next=True
     figure+=1;doc.add_paragraph(f'Figure {figure}  {caption}',style='Caption')
     md.append(f'![{caption}](images/{name})\n')
 
 def phase(n,title):
-    doc.add_page_break();h(f'Phase {n} {title}',1)
+    body=doc._element.body
+    while len(body)>1 and body[-2].tag==qn('w:p') and not ''.join(body[-2].itertext()).strip():
+        body.remove(body[-2])
+    h(f'Phase {n} {title}',1)
+    doc.paragraphs[-1].paragraph_format.page_break_before=True
 
 def code(text):
     para=doc.add_paragraph();run=para.add_run(text);run.font.name='Consolas';run.font.size=Pt(8)
@@ -106,6 +118,7 @@ p('Two nominal sprint plans each span exactly fifteen days: 8 October to 23 Octo
 table(['Artifact','Location'],[
  ('Working source and tests','app.py; schema.sql; templates/; static/; tests/'),('Secure containers and deployment','Dockerfile; compose.yaml; deploy/kubernetes.yaml; deploy/Caddyfile'),('Jira','https://mavinash.atlassian.net/jira/software/c/projects/CLF24/boards/236'),('Models and wireframe evidence','deliverables/images/; deliverables/editable/'),('Machine readable traceability','deliverables/catalog.json; tables/*.csv; security-analysis.json'),('Raw verification records','deliverables/evidence/'),('Editable report','deliverables/College_Lost_and_Found_Report.md')],widths=[2.0,4.75])
 h('Submission contents')
+doc.paragraphs[-1].paragraph_format.page_break_before=True
 for n,t in enumerate(['Agile process','Requirements engineering','Use cases and analysis','Data and information flow','Architecture and design','User interface','Threat and vulnerability analysis','Attack tree and refinement','Product backlog and Jira','Sprint execution and metrics','Secure build','Secure coding and refactoring','Docker and Kubernetes','CI and security testing','Monitoring and deployment hardening','Final security review'],1):p(f'{n:02d}  {t}')
 
 phase(1,'Agile Process and Development Approach')
@@ -194,10 +207,12 @@ table(['Path','Preventive control','Detective control'],[('Compromise reporter i
 phase(9,'Product Backlog and Jira Scrum')
 table(['Epic','Scope','Jira key'],[(e['id'],e['name'],JIRA.get('epics',{}).get(e['id'],'Pending')) for e in DATA['epics']],name='epics',widths=[.6,4.75,1.4])
 for s in DATA['stories']:
+    block_start=len(doc.paragraphs)
     h(s['id']+' '+s['summary'])
     p(s['story'])
     p(f"Requirement {s['requirement']} | Epic {s['epic']} | Priority {s['priority']} | Sprint {s['sprint']} | Estimate {s['points']} points | Task {s['task']} | Jira {JIRA.get('stories',{}).get(s['id'],'Pending')}")
     bullets(s['acceptance'])
+    for para in doc.paragraphs[block_start:-1]:para.paragraph_format.keep_with_next=True
 table(['Sprint','Nominal fifteen-day schedule','Goal','Committed points'],[(sp['name'],sp['start']+' to '+sp['end'],sp['goal'],sum(s['points'] for s in DATA['stories'] if s['sprint']==sp['number'])) for sp in DATA['sprints']],name='sprint_plans',widths=[1.1,2.25,2.55,.85])
 p('Stories US01–US08 are planned for Sprint 1; US09–US16 for Sprint 2. Each story has one implementation/verification subtask. All Jira work items are assigned to Marisetti Avinash. No work is assigned to another person.')
 
@@ -243,7 +258,7 @@ p('The GitHub Actions workflow defines checkout, pinned dependency installation,
 table(['Test category','Concrete checks','Result evidence'],[('Unit module tests','validate_text boundaries and can_manage ownership policy.','tests-final.txt'),('Integration tests','Database-backed pending visibility, moderation, messaging and recovery state checks.','tests-final.txt'),('System validation','Report → verify → private message → reply → recovery, both automated and browser UI.','test_end_to_end_report_verify_contact_recover; browser-e2e.json'),('Simple fuzzing','Nine title-boundary inputs including empty/oversize/control/SQL/markup/Unicode/wildcards. No unhandled 500; accepted markup escapes on display.','test_fuzz_report_boundary'),('Static analysis','Bandit and project AST rules for dangerous execution debug and literal credentials.','bandit-final.json; static-check.json'),('Dependency audit','Pinned application dependency inventory checked against advisory service.','dependency-audit-before.json; dependency-audit.json'),('Container integration','Health TLS and authenticated workflow against running container where logged.','docker-e2e.json; kubernetes-e2e.json')],name='test_matrix',widths=[1.3,3.9,1.55])
 defects=[('DEF01','Medium','Invalid Host caused error-template routing failure','Return safe plain error if no url_rule exists','test_host_validation passes'),('DEF02','Medium','Account-wide / nonatomic login attempt bound','Immediate transaction; keyed source/account scope','Throttle and different-source tests pass'),('DEF03','Medium','Old pending reports unreachable after 100 new reports','Pending-first paginated moderation queue','test_admin_pagination passes'),('DEF04','Low','Reply input visible for closed reports','Hide closed report reply input; retain server denial','test_closed_inbox_hides_reply passes'),('DEF05','High','Known vulnerable initial dependency pins','Upgrade to patched versions; audit again','No known vulnerabilities in final audit'),('DEF06','Medium','Caddy executable file capability prevented startup after all capabilities were dropped','Remove executable file capability; serve unprivileged 8443 as UID 10001','Docker and Kubernetes TLS workflows pass')]
 table(['Defect','Severity','Observed issue','Fix','Retest'],defects,name='defects',widths=[.65,.65,1.8,1.95,1.7])
-p('The initial 31-test run exposed DEF01 after resolving a sandbox temporary-directory setup issue. Subsequent tests include the remediation cases. The setup issue was an environment failure, not an application vulnerability. Raw logs distinguish the two. No production exploitation or comprehensive penetration-test certification is claimed.')
+p('The first 31-test run exposed DEF01; final 34-test retests pass. Raw logs distinguish environment setup failures from application defects. These results verify the laboratory implementation; no production exploitation is claimed.')
 
 phase(15,'Logging Monitoring Hardening and Deployment')
 table(['Event','Logged fields','Handling'],[('login_failed / login_throttled','Event outcome timestamp; no password','Investigate elevated denial rate; do not expose identifiers on public dashboard.'),('authorization_denied / recovery_denied','Actor object event outcome UTC time','Alert on repeated unauthorized actions.'),('report_verified / report_removed','Actor report ID decision outcome time','Reason/moderator stored on report; audit provides accountability.'),('item_recovered','Actor report ID success time','Trace integrity-sensitive state change.'),('message_sent / message_reply','Actor report ID event outcome time','No message body in audit; participant privacy preserved.'),('registration / login_success / logout','Event actor when authenticated outcome timestamp','Support identity lifecycle review without credential values.')],name='logging_plan',widths=[2,2.7,2.05])
@@ -261,6 +276,8 @@ h('Final observations')
 p('The case-study identifiers align from requirements through tests and deployment controls. Technical results are supported by source, raw logs, API records and application screenshots. Nominal sprint schedules and forecast charts are distinguished from compressed laboratory execution; modelled risk is distinguished from observed defects. The final evidence index records exactly which runtime checks completed.')
 h('Authoritative technical references')
 for title,url in [('Flask security guidance','https://flask.palletsprojects.com/en/stable/web-security/'),('Werkzeug changes','https://werkzeug.palletsprojects.com/en/stable/changes/'),('Jira REST projects','https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-projects/'),('Jira workflows','https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-workflows/'),('Jira sprint API','https://developer.atlassian.com/cloud/jira/software/rest/api-group-sprint/'),('kind quick start','https://kind.sigs.k8s.io/docs/user/quick-start/'),('Kubernetes security checklist','https://kubernetes.io/docs/concepts/security/security-checklist/')]:p(title+'\n'+url)
+for container in [doc._element,doc.styles.element]:
+    for border in list(container.iter(qn('w:pBdr'))):border.getparent().remove(border)
 doc.save(OUT/'College_Lost_and_Found_Report.docx')
 (OUT/'College_Lost_and_Found_Report.md').write_text('\n'.join(md),encoding='utf8')
 with (OUT/'tables/backlog.csv').open('w',newline='',encoding='utf-8-sig') as f:
