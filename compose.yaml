@@ -1,0 +1,45 @@
+services:
+  app:
+    build: .
+    image: campus-lost-found:1.0.0
+    environment:
+      APP_SECRET: ${APP_SECRET:?Set APP_SECRET in .env}
+      DATABASE: /data/campus.db
+      COOKIE_SECURE: 'true'
+      TRUSTED_HOSTS: localhost,127.0.0.1,app
+    ports:
+      - '127.0.0.1:8080:8080'
+    volumes:
+      - campus-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 1.0
+    restart: unless-stopped
+  tls:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.tls
+    image: campus-tls:1.0.0
+    ports:
+      - '127.0.0.1:8443:8443'
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    mem_limit: 128m
+    depends_on:
+      app:
+        condition: service_healthy
+volumes:
+  campus-data:
+  caddy-data:
+  caddy-config:

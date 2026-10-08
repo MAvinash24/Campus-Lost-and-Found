@@ -1,0 +1,11 @@
+.git
+.runtime*
+.tools
+tests/.tmp
+.env
+.local-secrets.json
+data
+deliverables
+wheelhouse
+__pycache__
+.pytest_cache

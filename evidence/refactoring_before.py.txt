@@ -1,0 +1,9 @@
+# Educational initial version. Never execute or deploy this example.
+# Weakness 1: no owner authorization; user-supplied identifier controls the write.
+def recover_item_before(conn, item_id):
+    conn.execute(f"UPDATE reports SET status='recovered' WHERE id={item_id}")
+
+# Weakness 2: trusting a form role allows privilege escalation; raw passwords stored.
+def register_before(conn, form):
+    conn.execute('INSERT INTO users(email,password_hash,role) VALUES(?,?,?)',
+                 (form['email'],form['password'],form['role']))

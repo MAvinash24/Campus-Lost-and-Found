@@ -1,0 +1,200 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: campus-lost-found
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: campus-data
+  namespace: campus-lost-found
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: campus-app
+  namespace: campus-lost-found
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: campus-app
+  template:
+    metadata:
+      labels:
+        app: campus-app
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: app
+          image: campus-lost-found:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: APP_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: campus-secret
+                  key: APP_SECRET
+            - name: DATABASE
+              value: /data/campus.db
+            - name: COOKIE_SECURE
+              value: 'true'
+            - name: TRUSTED_HOSTS
+              value: localhost,127.0.0.1,campus-app,campus.local
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 96Mi
+            limits:
+              cpu: '1'
+              memory: 256Mi
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+              httpHeaders:
+                - name: Host
+                  value: localhost
+            initialDelaySeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+              httpHeaders:
+                - name: Host
+                  value: localhost
+            initialDelaySeconds: 15
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: tmp
+              mountPath: /tmp
+        - name: tls
+          image: campus-tls:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8443
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi
+          volumeMounts:
+            - name: tls-config
+              mountPath: /etc/caddy/Caddyfile
+              subPath: Caddyfile
+              readOnly: true
+            - name: tls-data
+              mountPath: /data
+            - name: tls-runtime
+              mountPath: /config
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: campus-data
+        - name: tmp
+          emptyDir:
+            medium: Memory
+            sizeLimit: 32Mi
+        - name: tls-config
+          configMap:
+            name: campus-tls-config
+        - name: tls-data
+          persistentVolumeClaim:
+            claimName: campus-tls-data
+        - name: tls-runtime
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: campus-app
+  namespace: campus-lost-found
+spec:
+  type: ClusterIP
+  selector:
+    app: campus-app
+  ports:
+    - name: https
+      port: 8443
+      targetPort: 8443
+    - name: health-http
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: campus-isolation
+  namespace: campus-lost-found
+spec:
+  podSelector:
+    matchLabels:
+      app: campus-app
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ingress-nginx
+      ports:
+        - port: 8080
+          protocol: TCP
+        - port: 8443
+          protocol: TCP
+  egress: []
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: campus-tls-config
+  namespace: campus-lost-found
+data:
+  Caddyfile: |
+    https://localhost:8443, https://campus.local:8443 {
+        tls internal
+        reverse_proxy 127.0.0.1:8080
+    }
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: campus-tls-data
+  namespace: campus-lost-found
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 128Mi

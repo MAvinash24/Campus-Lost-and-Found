@@ -1,0 +1,10 @@
+from pathlib import Path
+p=Path('scripts/build_report.py');s=p.read_text(encoding='utf8')
+s=s.replace('Five engineering defects/fix groups: invalid-host handling, login throttling, moderation pagination, closed-message UI, vulnerable initial dependencies.','Six verified fix groups: invalid-host handling, login throttling, moderation pagination, closed-message UI, vulnerable initial dependencies and the TLS image executable capability.')
+s=s.replace('evidence/tls-smoke.json','evidence/docker-tls-smoke.json; kubernetes-tls-smoke.json')
+s=s.replace("'tls-smoke.json; docker-e2e.json'","'docker-e2e.json; kubernetes-e2e.json'")
+s=s.replace('ClusterIP service. External access requires explicitly provisioned TLS ingress.','ClusterIP with unprivileged TLS sidecar on 8443. Loopback port-forward HTTPS was validated against the exported lab CA. Production requires a campus certificate and controlled ingress.')
+s=s.replace("('DEF05','High','Known vulnerable initial dependency pins','Upgrade to patched versions; audit again','No known vulnerabilities in final audit')]","('DEF05','High','Known vulnerable initial dependency pins','Upgrade to patched versions; audit again','No known vulnerabilities in final audit'),('DEF06','Medium','Caddy executable file capability prevented startup after all capabilities were dropped','Remove executable file capability; serve unprivileged 8443 as UID 10001','Docker and Kubernetes TLS workflows pass')]")
+s=s.replace("image('jira_board.jpg','Jira board screenshot if browser authentication is available')","image('jira_board.jpg','Actual signed-in Jira board with completed work')")
+p.write_text(s,encoding='utf8')
+print('Report synchronized with the verified TLS deployments and six fix groups.')

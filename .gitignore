@@ -1,0 +1,13 @@
+.runtime*/
+.env
+.local-secrets.json
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+wheelhouse/
+.tools/
+tests/.tmp/
+deliverables/qa/
+deliverables/*.zip
+deliverables/package-manifest.json
