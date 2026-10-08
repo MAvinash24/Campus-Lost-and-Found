@@ -1,0 +1,8 @@
+﻿Control,Evidence or production requirement
+Least privilege,Non-root application process; admin/report-owner/participant route policies; read-only CI token permissions.
+Secret management,APP_SECRET and Jira credentials read from environment; no Jira token in source/report/archive; local secret files ignored.
+Dependency control,Explicit patched versions; requirements.lock hashes; pip-audit result retained.
+Review and branch policy,Feature branch → review → main is the intended workflow. Hosted branch protection requires configuring a remote and is not claimed as enforced locally.
+Reproducible build and integrity,"Pinned Python image digest/dependencies where recorded; build log, image digest and package SHA256 retained."
+Automated checks,"Bandit, project AST check, unit/integration/system/fuzz tests and dependency audit."
+Private artifact scope,Local repository; no public publication of private credentials or campus records.

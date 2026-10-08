@@ -1,0 +1,13 @@
+﻿ID,DFD,STRIDE,Threat,Impact,Control
+TH01,P1 / TB1,S,Credential guessing or forged session,Account impersonation,scrypt; random signing secret; TLS; atomic source/account throttling.
+TH02,P2 / D2,T,Craft SQL syntax in search or report,Read or change unintended records,Fixed SQL with bound parameters; LIKE metacharacters escaped.
+TH03,P3 / D2,T,Recover another user’s report,False recovery and loss of trust,Reporter_id policy; CSRF; verified/open precondition; audit denials.
+TH04,P4 / D2,E,Ordinary user invokes moderation,Unauthorized verification/removal,Current database role check; registration role allowlist; operator-only admin creation.
+TH05,P3 / D3,I,Read or reply to unrelated private message,Private-content disclosure,Participant-scoped SQL; reply recipient authorization; no blanket admin inbox.
+TH06,P2 / TB1,T,Store active malicious markup,Script execution / session abuse,Jinja escaping; no safe rendering; CSP script-src none; text bounds.
+TH07,POST routes / TB1,S,Cross-site request forgery,Unwanted recovery/moderation/message,Session-bound token; token rotation on login; SameSite cookie.
+TH08,P1 / P3,D,Login guessing or message flooding,Resource exhaustion or harassment,Five account/source attempts per 15 minutes; ten sends per minute; body and resource limits.
+TH09,D4,R,Deny having changed report state,Incident attribution failure,Actor object event outcome UTC timestamp; external immutable export is future work.
+TH10,TB2 / A8,I,Read private volume or backup,Message/hash disclosure,Non-root application; operator storage ACL; encryption/backup policies remain operational.
+TH11,TB3 / A9,T,Use vulnerable dependency or altered image,Runtime compromise,Pinned patched versions; dependency audit; build evidence; digest recording and CI gates.
+TH12,P1 / E1,S,Register using an unverified campus identity,Spam and identity misrepresentation,Admin verification of reports; residual risk until campus SSO/email verification.

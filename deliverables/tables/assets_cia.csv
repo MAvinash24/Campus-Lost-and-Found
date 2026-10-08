@@ -1,0 +1,10 @@
+﻿ID,Asset,C,I,A
+A1,Passwords and credential verification,High,High,Medium
+A2,Account email and identity,High,High,Medium
+A3,Private message contents,High,High,Medium
+A4,Report ownership and recovery state,Medium,High,High
+A5,Moderation decisions and reasons,Medium,High,High
+A6,Audit metadata,Medium,High,High
+A7,Session signing secret and CSRF identity,High,High,High
+A8,SQLite volume and backups,High,High,High
+A9,Build image and dependency integrity,Medium,High,High

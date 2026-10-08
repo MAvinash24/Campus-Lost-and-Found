@@ -1,0 +1,7 @@
+﻿Defect,Severity,Observed issue,Fix,Retest
+DEF01,Medium,Invalid Host caused error-template routing failure,Return safe plain error if no url_rule exists,test_host_validation passes
+DEF02,Medium,Account-wide / nonatomic login attempt bound,Immediate transaction; keyed source/account scope,Throttle and different-source tests pass
+DEF03,Medium,Old pending reports unreachable after 100 new reports,Pending-first paginated moderation queue,test_admin_pagination passes
+DEF04,Low,Reply input visible for closed reports,Hide closed report reply input; retain server denial,test_closed_inbox_hides_reply passes
+DEF05,High,Known vulnerable initial dependency pins,Upgrade to patched versions; audit again,No known vulnerabilities in final audit
+DEF06,Medium,Caddy executable file capability prevented startup after all capabilities were dropped,Remove executable file capability; serve unprivileged 8443 as UID 10001,Docker and Kubernetes TLS workflows pass

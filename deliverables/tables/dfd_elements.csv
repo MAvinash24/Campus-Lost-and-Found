@@ -1,0 +1,8 @@
+﻿Element,Responsibility and sensitive flows
+E1 E2 E3,"Campus users, administrators and privileged operator."
+P1 Identity and sessions,"Credentials to D1; salted hash verification, session identity, login throttling."
+P2 Reports and search,Creates pending D2 records; returns verified public fields or owner-scoped records.
+P3 Contact and recovery,Writes participant-scoped D3 messages; authorizes reporter recovery in D2.
+P4 Moderation and audit,Administrator updates D2 verification/removal; records D4 events.
+D1 D2 D3 D4,Users/login attempts; reports; private messages; audit events in the same SQLite database.
+TB1 TB2 TB3,Browser/application boundary; application/private storage boundary; privileged operator/deployment boundary.

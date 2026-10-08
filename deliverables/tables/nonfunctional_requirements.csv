@@ -1,0 +1,11 @@
+﻿ID,Nonfunctional or security requirement,Verification or limitation
+N01,Private messages accessible only to participants,Private-inbox and reply-ID tests; administrators do not inherit message access.
+N02,All state changes require authenticated authority and CSRF,Role/ownership tests and CSRF rejection test.
+N03,Passwords stored as salted scrypt hashes,Database assertion confirms hash form and absence of plaintext.
+N04,Bound report/message fields and body size,Title 3–100; description 10–1000; message 5–1000; body ≤16384 bytes; fuzz tests.
+N05,TLS for credentials and private contact in deployment,Caddy lab TLS; internal development CA requires trusted client; production requires valid campus certificate.
+N06,Thirty-minute session validity configuration,Flask permanent session policy; activity can refresh validity. No immediate central revocation yet.
+N07,Responsive accessible interface,"Labels, visible errors, keyboard focus, small-screen layout and browser inspection."
+N08,Target p95 response below two seconds for a 100-item search,Performance target; a small smoke measurement does not establish concurrent campus-scale capacity.
+N09,Auditable privileged changes without secrets in logs,"Actor, event, object, outcome and UTC timestamp; password/message contents excluded."
+N10,Recoverable private storage,SQLite volume/PVC; backup and retention are operational deployment controls.

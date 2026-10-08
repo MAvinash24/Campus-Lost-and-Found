@@ -1,0 +1,7 @@
+ Container sse-app-1 Running 
+ Container sse-tls-1 Recreate 
+ Container sse-tls-1 Recreated 
+ Container sse-app-1 Waiting 
+ Container sse-app-1 Healthy 
+ Container sse-tls-1 Starting 
+ Container sse-tls-1 Started 

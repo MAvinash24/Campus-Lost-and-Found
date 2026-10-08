@@ -1,0 +1,24 @@
+Image: "campus-tls:1.0.0" with ID "sha256:31b34af01e55164dd194dc6856fe14e2488d1dea5c4470235d5591df1c12cd85" not yet present on node "campus-lab-control-plane", loading...
+namespace/campus-lost-found created
+persistentvolumeclaim/campus-data created
+deployment.apps/campus-app created
+service/campus-app created
+networkpolicy.networking.k8s.io/campus-isolation created
+configmap/campus-tls-config created
+persistentvolumeclaim/campus-tls-data created
+secret/campus-secret created
+Waiting for deployment "campus-app" rollout to finish: 0 of 1 updated replicas are available...
+deployment "campus-app" successfully rolled out
+Demo identities provisioned; credential values were not printed.
+NAME                              READY   STATUS    RESTARTS   AGE   IP           NODE                       NOMINATED NODE   READINESS GATES
+pod/campus-app-5d94c844fd-gkz44   2/2     Running   0          17s   10.244.0.7   campus-lab-control-plane   <none>           <none>
+
+NAME                 TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)             AGE   SELECTOR
+service/campus-app   ClusterIP   10.96.71.169   <none>        8443/TCP,8080/TCP   17s   app=campus-app
+
+NAME                                    STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/campus-data       Bound    pvc-5b6d13af-ac68-4330-a371-caad57927572   1Gi        RWO            standard       <unset>                 17s   Filesystem
+persistentvolumeclaim/campus-tls-data   Bound    pvc-82c29669-7706-45fe-8d87-6850e037cccf   128Mi      RWO            standard       <unset>                 17s   Filesystem
+
+NAME                                               POD-SELECTOR     AGE
+networkpolicy.networking.k8s.io/campus-isolation   app=campus-app   18s

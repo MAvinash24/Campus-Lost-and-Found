@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-10-08T05:28:25.812600+00:00",
+  "done_issues": 38,
+  "done_stories": 16,
+  "done_story_points": 70,
+  "sprint_points": {
+    "1": 36,
+    "2": 34
+  },
+  "execution": "Compressed lab demonstration. Nominal fifteen-day dates are plans, not elapsed working history.",
+  "defect_fix_groups": 6,
+  "assigned_only_to": "Marisetti Avinash"
+}

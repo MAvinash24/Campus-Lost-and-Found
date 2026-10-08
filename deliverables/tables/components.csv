@@ -1,0 +1,8 @@
+﻿Component,Interface,Responsibility
+Browser templates and stylesheet,HTML GET and CSRF-protected form POST,Login reporting search details inbox moderation and recovery feedback.
+Identity and route guards,register login logout; auth decorator,Hash passwords; authenticate; load current database role; deny unauthorized routes.
+Report service,report items detail recover,"Validate input, enforce moderation visibility and reporter-only recovery."
+Messaging service,contact inbox reply,"Derive recipients server-side, enforce participants and bound send rate."
+Moderation and audit,admin moderate audit(),Record reason/moderator and auditable outcomes; pending-first paginated review.
+Data access,SQLite parameterized statements,"Foreign keys, state checks, WAL persistence and transactions."
+Deployment edge,Caddy → Gunicorn; ClusterIP service,"TLS, process isolation, health checks and resource restrictions."

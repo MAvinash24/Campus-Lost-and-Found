@@ -1,0 +1,7 @@
+﻿Relationship,Cardinality and invariant
+User creates Report,One report has exactly one reporter; a user has zero or many reports.
+User moderates Report,Report has zero or one moderator; administrator may moderate many reports.
+Report has Message,Message references one report; report has zero or many messages.
+User sends or receives Message,One sender and one recipient per message; each user may have many sent/received messages.
+User performs AuditEvent,"Zero or one actor per event, allowing unauthenticated denial events; many events per user."
+LoginAttempt,Independent attempt record includes unknown emails and hashed connection source; no required User FK.

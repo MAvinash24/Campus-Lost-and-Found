@@ -1,0 +1,6 @@
+{
+  "version": "TLSv1.3",
+  "cipher": "TLS_AES_128_GCM_SHA256",
+  "certificate_validation": "passed against local lab CA",
+  "hostname_validation": "localhost passed"
+}

@@ -1,0 +1,58 @@
+ Image campus-tls:1.0.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 829B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.tls
+#2 transferring dockerfile: 224B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context:
+#4 transferring context: 153B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#5 resolve docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d 0.0s done
+#5 DONE 0.2s
+
+#5 [1/2] FROM docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#5 extracting sha256:d49a2dee86fb12766dd648402d010ca105846a41bd58738454e53780d4bb8e97 0.1s done
+#5 DONE 0.3s
+
+#5 [1/2] FROM docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#5 extracting sha256:15dab9c579893913f1dde3163b96d3e03f06a907b3ddfe78f71ca73f5f5eceb4 0.1s done
+#5 DONE 0.4s
+
+#5 [1/2] FROM docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#5 extracting sha256:c108b7dc59eb05d618e1ee8803e793ce44eed9e2967c6cef39210d81d8a4b4fc 0.0s done
+#5 extracting sha256:0f5b2460369730f1bee18fea5bf1b63d3d5f17fda1aabbdbbd86cf5ae49ab9f7
+#5 extracting sha256:0f5b2460369730f1bee18fea5bf1b63d3d5f17fda1aabbdbbd86cf5ae49ab9f7 0.3s done
+#5 DONE 0.7s
+
+#5 [1/2] FROM docker.io/library/caddy:2.10.2-alpine@sha256:4c6e91c6ed0e2fa03efd5b44747b625fec79bc9cd06ac5235a779726618e530d
+#5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.0s done
+#5 DONE 0.8s
+
+#6 [2/2] RUN setcap -r /usr/bin/caddy && chown -R 10001:10001 /data /config
+#6 DONE 0.6s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 2.0s done
+#7 exporting manifest sha256:fa34cb56a434e168f2e2c8ab5059198b8e558c8523b15fae7ff601a86cf846f0 0.0s done
+#7 exporting config sha256:fea24dc1c1cf776c5fd9f8d9a9050a536518aa2fb547a39c4db0512d709117a4 0.0s done
+#7 exporting attestation manifest sha256:cda3b87a5a421bd356572cdd3323898ac01f6e68d4c86189624e79f48a40a507 0.0s done
+#7 exporting manifest list sha256:31b34af01e55164dd194dc6856fe14e2488d1dea5c4470235d5591df1c12cd85 0.0s done
+#7 naming to docker.io/library/campus-tls:1.0.0
+#7 naming to docker.io/library/campus-tls:1.0.0 0.0s done
+#7 unpacking to docker.io/library/campus-tls:1.0.0
+#7 unpacking to docker.io/library/campus-tls:1.0.0 0.3s done
+#7 DONE 2.5s
+
+#8 resolving provenance for metadata file
+#8 DONE 0.0s
+ Image campus-tls:1.0.0 Built 

@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "report_pages": 42,
+  "phases": 16,
+  "jira_done_issues": 38,
+  "jira_only_assignee": "Marisetti Avinash",
+  "sprint_days": [
+    15,
+    15
+  ],
+  "automated_tests": 34,
+  "docker_https_e2e": true,
+  "kubernetes_https_e2e": true,
+  "docx_package_integrity": true,
+  "visual_review": "All 42 rendered pages inspected; title monochrome; figures retain captions; no blank pages.",
+  "secret_policy": "Runtime credentials and Jira token excluded from submitted archive.",
+  "limits": [
+    "Nominal sprint forecasts; compressed lab execution",
+    "No hosted GitHub Actions run",
+    "Default kind CNI NetworkPolicy enforcement not verified",
+    "Production campus SSO, immutable audit and trusted campus certificate remain future work"
+  ]
+}

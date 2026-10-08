@@ -1,0 +1,8 @@
+﻿Metric or alert,Threshold or signal,Operator response
+Login-denial rate,More than 20 denials in five minutes per source/account group,Review brute-force/lockout pattern and ingress rate controls.
+Authorization denial,More than five 403 policy denials in five minutes,Review actor/object access attempts.
+Moderation queue age,Pending report older than 24 hours,Administrator checks backlog and removes unsafe content.
+Service health and error rate,Health probe failures or 5xx rate over 1%,Inspect process/storage/resource conditions and rollback verified image.
+Resource saturation,Memory above 80% or disk free below 15%,Check retention and add capacity; do not delete required evidence blindly.
+Message throttling,Repeated rate-limit responses,Investigate harassment and restrict abusive accounts through a future admin policy.
+Backup freshness,No verified backup in 24 hours,Run encrypted backup and perform restore verification.

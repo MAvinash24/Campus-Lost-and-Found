@@ -1,0 +1,17 @@
+﻿ID,Requirement,Acceptance condition,Priority,Trace
+R01,Account registration and sign in,Student and faculty register; administrator is provisioned by operator.,Must,UC01 / US01
+R02,Report a lost item,Capture title description category location and date; create pending report.,Must,UC02 / US02
+R03,Report a found item,Use the same validated workflow with kind found.,Must,UC02 / US03
+R04,Search verified reports,Search title description location and filter kind/category.,Must,UC03 / US04
+R05,Private owner or finder contact,Authenticated contact through recipient-scoped internal inbox.,Must,UC04 / US05
+R06,Owner-only recovery,Only the reporting user can close an open verified report.,Must,UC05 / US06
+R07,Administrator moderation,Administrator verifies or soft-removes suspicious reports with reason.,Must,UC06 / US07
+R08,Personal report tracking,Owner can see their pending verified and removed reports.,Should,UC07 / US08
+R09,Secure communication and sessions,TLS cookie security CSRF request limits CSP and password hashing.,Must,UC01 / US09
+R10,Malicious content prevention,Escape displayed text and use parameterized SQL and bounded input.,Must,UC02 / US10
+R11,Security audit and monitoring,Record login denial moderation recovery and message metadata without body or password.,Must,UC08 / US11
+R12,Private reply and abuse control,Recipient-only replies; cap messages at ten per minute per sender.,Should,UC04 / US12
+R13,Secure Docker packaging,Pinned dependencies non-root read-only rootfs least privilege TLS health check.,Must,UC09 / US13
+R14,Kubernetes deployment,Restricted namespace limits secret PVC ClusterIP network policy.,Must,UC09 / US14
+R15,Verified delivery pipeline,Checkout build tests static check dependency audit image package; fail on errors.,Must,UC09 / US15
+R16,Accessible consistent interface,Responsive labelled controls error feedback cancel clear and progress views.,Should,UC03 / US16

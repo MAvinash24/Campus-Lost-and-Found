@@ -1,0 +1,7 @@
+﻿Screen,User goal and navigation,Inputs feedback and security
+Login and registration,All users; proceed to browse after sign-in.,Email/password; generic login failure; 12-character minimum registration; admin role cannot be selected.
+Browse and search,Students/faculty discover verified items; navigate to report or detail.,Search/type/category filters; result count and empty state; emails absent.
+Report form,Student/faculty report lost/found; cancel returns to browse.,Bound fields and date; field error feedback; pending state prevents immediate publication.
+Private inbox and contact,Participants communicate without exposing account emails.,Bound message; reply recipient derived from received message; closed reports hide reply controls.
+Administrator moderation,Admin verifies/removes suspicious reports; reviews audit.,Reason required for removal; pending-first paginated queue; role guard.
+Recovery result,Reporter confirms return and sees recovered state.,Explicit confirmation action; server checks owner/open/verified; duplicate action rejected.

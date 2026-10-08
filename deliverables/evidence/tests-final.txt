@@ -1,0 +1,39 @@
+test_admin_gate (test_app.CampusTests.test_admin_gate) ... ok
+test_admin_pagination (test_app.CampusTests.test_admin_pagination) ... ok
+test_anonymous_requires_login (test_app.CampusTests.test_anonymous_requires_login) ... ok
+test_attacker_cannot_lock_out_other_source (test_app.CampusTests.test_attacker_cannot_lock_out_other_source) ... ok
+test_audit_contains_no_secrets (test_app.CampusTests.test_audit_contains_no_secrets) ... ok
+test_body_limit (test_app.CampusTests.test_body_limit) ... ok
+test_closed_inbox_hides_reply (test_app.CampusTests.test_closed_inbox_hides_reply) ... ok
+test_contact_closed_or_self_denied (test_app.CampusTests.test_contact_closed_or_self_denied) ... ok
+test_csrf_required (test_app.CampusTests.test_csrf_required) ... ok
+test_email_not_public (test_app.CampusTests.test_email_not_public) ... ok
+test_end_to_end_report_verify_contact_recover (test_app.CampusTests.test_end_to_end_report_verify_contact_recover) ... ok
+test_future_date_rejected (test_app.CampusTests.test_future_date_rejected) ... ok
+test_fuzz_report_boundary (test_app.CampusTests.test_fuzz_report_boundary) ... ok
+test_health_and_headers (test_app.CampusTests.test_health_and_headers) ... ok
+test_host_validation (test_app.CampusTests.test_host_validation) ... ok
+test_login_session_rotation (test_app.CampusTests.test_login_session_rotation) ... ok
+test_login_throttling (test_app.CampusTests.test_login_throttling) ... ok
+test_message_throttle (test_app.CampusTests.test_message_throttle) ... ok
+test_moderation_and_removal (test_app.CampusTests.test_moderation_and_removal) ... ok
+test_owner_policy (test_app.CampusTests.test_owner_policy) ... ok
+test_password_not_plaintext (test_app.CampusTests.test_password_not_plaintext) ... ok
+test_pending_cannot_recover (test_app.CampusTests.test_pending_cannot_recover) ... ok
+test_pending_visibility (test_app.CampusTests.test_pending_visibility) ... ok
+test_private_messages_and_reply (test_app.CampusTests.test_private_messages_and_reply) ... ok
+test_recovery_idempotency (test_app.CampusTests.test_recovery_idempotency) ... ok
+test_registration_admin_escalation_denied (test_app.CampusTests.test_registration_admin_escalation_denied) ... ok
+test_registration_valid (test_app.CampusTests.test_registration_valid) ... ok
+test_remove_requires_reason (test_app.CampusTests.test_remove_requires_reason) ... ok
+test_search_wildcards_are_literal (test_app.CampusTests.test_search_wildcards_are_literal) ... ok
+test_session_cookie_security (test_app.CampusTests.test_session_cookie_security) ... ok
+test_sql_injection_search (test_app.CampusTests.test_sql_injection_search) ... ok
+test_text_validation_bounds (test_app.CampusTests.test_text_validation_bounds) ... ok
+test_unauthorized_recovery (test_app.CampusTests.test_unauthorized_recovery) ... ok
+test_xss_escaped (test_app.CampusTests.test_xss_escaped) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 35.620s
+
+OK

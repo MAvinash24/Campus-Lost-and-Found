@@ -1,0 +1,4 @@
+﻿Asset,Source route and sink,Authorized recipients,Protection and residual issue
+A1 credentials,Browser → TLS → P1 → D1 hash comparison,Identity service; operator-controlled private storage,Plain password is used only for hashing/comparison; secure cookie. No campus SSO yet.
+A3 private message,Sender → P3 → D3 → participant inbox,Sender and recipient; operator has storage authority,"Server-derived recipient, escaped output, no body in audit. DB at-rest encryption is operational."
+A4 recovery state,Reporter POST → P3 → D2 update → D4 audit,Authenticated reporter writes; verified-report readers see status,"Owner policy, CSRF, state check, audit. Creator confirmation does not prove a real-world handover."

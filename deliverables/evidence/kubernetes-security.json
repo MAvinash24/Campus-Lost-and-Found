@@ -1,0 +1,63 @@
+{
+  "replicas": 1,
+  "ready_replicas": 1,
+  "service_account_token": false,
+  "pod_security_context": {
+    "fsGroup": 10001,
+    "runAsGroup": 10001,
+    "runAsNonRoot": true,
+    "runAsUser": 10001,
+    "seccompProfile": {
+      "type": "RuntimeDefault"
+    }
+  },
+  "containers": [
+    {
+      "name": "app",
+      "image": "campus-lost-found:1.0.0",
+      "security_context": {
+        "allowPrivilegeEscalation": false,
+        "capabilities": {
+          "drop": [
+            "ALL"
+          ]
+        },
+        "readOnlyRootFilesystem": true
+      },
+      "resources": {
+        "limits": {
+          "cpu": "1",
+          "memory": "256Mi"
+        },
+        "requests": {
+          "cpu": "100m",
+          "memory": "96Mi"
+        }
+      }
+    },
+    {
+      "name": "tls",
+      "image": "campus-tls:1.0.0",
+      "security_context": {
+        "allowPrivilegeEscalation": false,
+        "capabilities": {
+          "drop": [
+            "ALL"
+          ]
+        },
+        "readOnlyRootFilesystem": true
+      },
+      "resources": {
+        "limits": {
+          "cpu": "500m",
+          "memory": "128Mi"
+        },
+        "requests": {
+          "cpu": "50m",
+          "memory": "32Mi"
+        }
+      }
+    }
+  ],
+  "network_policy_note": "Manifest present; default kind CNI does not establish policy enforcement."
+}

@@ -1,0 +1,8 @@
+﻿Test category,Concrete checks,Result evidence
+Unit module tests,validate_text boundaries and can_manage ownership policy.,tests-final.txt
+Integration tests,"Database-backed pending visibility, moderation, messaging and recovery state checks.",tests-final.txt
+System validation,"Report → verify → private message → reply → recovery, both automated and browser UI.",test_end_to_end_report_verify_contact_recover; browser-e2e.json
+Simple fuzzing,Nine title-boundary inputs including empty/oversize/control/SQL/markup/Unicode/wildcards. No unhandled 500; accepted markup escapes on display.,test_fuzz_report_boundary
+Static analysis,Bandit and project AST rules for dangerous execution debug and literal credentials.,bandit-final.json; static-check.json
+Dependency audit,Pinned application dependency inventory checked against advisory service.,dependency-audit-before.json; dependency-audit.json
+Container integration,Health TLS and authenticated workflow against running container where logged.,docker-e2e.json; kubernetes-e2e.json

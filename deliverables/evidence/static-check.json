@@ -1,0 +1,6 @@
+{
+  "tool": "project AST security check",
+  "files_checked": 3,
+  "findings": [],
+  "passed": true
+}

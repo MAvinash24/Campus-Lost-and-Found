@@ -1,0 +1,64 @@
+ Image campus-lost-found:1.0.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 463B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 870B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+#3 DONE 2.1s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 153B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 1.47kB 0.0s done
+#6 DONE 0.0s
+
+#7 [1/8] FROM docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f
+#7 resolve docker.io/library/python:3.12-slim@sha256:05cda9777409a9c3ffddd94a4c476b79f0769a0b4857f0c7ed9226b6800b0d6f 0.0s done
+#7 DONE 0.0s
+
+#8 [6/8] COPY templates ./templates
+#8 CACHED
+
+#9 [4/8] RUN pip install --no-cache-dir --require-hashes -r requirements.lock && useradd --uid 10001 --create-home campus && mkdir /data && chown campus:campus /data
+#9 CACHED
+
+#10 [5/8] COPY app.py wsgi.py schema.sql ./
+#10 CACHED
+
+#11 [2/8] WORKDIR /app
+#11 CACHED
+
+#12 [3/8] COPY requirements.lock ./
+#12 CACHED
+
+#13 [7/8] COPY static ./static
+#13 CACHED
+
+#14 [8/8] COPY scripts/bootstrap.py scripts/seed_demo.py ./scripts/
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers 0.0s done
+#15 exporting manifest sha256:82bd06c5dc7caf171cacb610d36e41f0565dc2d189318b50f4580cccb8249b1f 0.0s done
+#15 exporting config sha256:6e873cc061edb81b22aee1e16ff0afa2797131a3dfbb1eb7143225e3134e0594 0.0s done
+#15 exporting attestation manifest sha256:b46530940784e766dc2f5c91a35bc1f1617f85ce7be72a27e8ed243e3b3710aa 0.0s done
+#15 exporting manifest list sha256:14c0f36b96b9336f56e17e4b74de4fd4fdc051b72765f29018394e75affb9829 0.0s done
+#15 naming to docker.io/library/campus-lost-found:1.0.0 done
+#15 unpacking to docker.io/library/campus-lost-found:1.0.0 0.0s done
+#15 DONE 0.2s
+
+#16 resolving provenance for metadata file
+#16 DONE 0.0s
+ Image campus-lost-found:1.0.0 Built 

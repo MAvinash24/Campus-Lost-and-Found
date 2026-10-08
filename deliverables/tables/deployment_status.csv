@@ -1,0 +1,6 @@
+﻿Runtime,Observed status,Evidence
+Docker build,Passed; pinned app and TLS images built,evidence/docker-build-final.txt
+Docker process and health,Healthy; non-root read-only filesystem; all capabilities dropped,evidence/docker-runtime.json
+TLS endpoint,Docker and Kubernetes TLSv1.3; certificate and hostname checks passed,evidence/docker-tls-smoke.json; kubernetes-tls-smoke.json
+Kubernetes rollout,Isolated kind deployment 2/2 ready; app and TLS sidecar,evidence/kubernetes.txt
+Kubernetes controls,Restricted namespace; non-root; seccomp; PVCs; ClusterIP; limits verified. NetworkPolicy enforcement not established on default kind CNI.,deploy/kubernetes.yaml; evidence/kubernetes-security.json

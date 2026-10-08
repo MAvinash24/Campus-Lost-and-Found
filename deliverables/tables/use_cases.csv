@@ -1,0 +1,10 @@
+﻿Use case,Actor,Requirement
+UC01 Register and sign in,Student / Faculty / Administrator,R01 R09
+UC02 Report lost or found,Campus user,R02 R03 R10
+UC03 Search and view verified items,Campus user,R04 R16
+UC04 Contact and reply privately,Campus user / message recipient,R05 R12
+UC05 Mark recovered,Report creator,R06
+UC06 Verify or remove,Administrator,R07
+UC07 Track own reports,Report creator,R08
+UC08 Review audit,Administrator,R11
+UC09 Deploy verified application,Operator / developer,R13 R14 R15

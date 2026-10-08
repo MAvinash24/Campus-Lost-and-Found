@@ -1,0 +1,12 @@
+﻿Trace step,Linked evidence
+Requirement,R06 Reporter-only recovery
+Use case,UC05 Mark item recovered
+DFD,P3 Contact/recovery → D2 Reports; audit to D4
+Threat,TH03 Tamper with another user’s recovery state
+Vulnerability,V01 Nonexecuted initial teaching function lacks owner check
+Attack tree,Authorization bypass branch: choose victim ID AND defeat owner policy
+User story,US06 Owner-only recovery; Epic E3
+Sprint task,Sprint 1 T06; Jira CLF24-18
+Implementation,app.py can_manage() and recover(); bound update and open/verified precondition
+Test,test_unauthorized_recovery; test_recovery_idempotency; browser recovery result
+Deployment control,"TLS edge, externally supplied session secret, non-root read-only container, private DB volume"

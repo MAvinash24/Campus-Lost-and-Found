@@ -1,0 +1,7 @@
+﻿Event,Logged fields,Handling
+login_failed / login_throttled,Event outcome timestamp; no password,Investigate elevated denial rate; do not expose identifiers on public dashboard.
+authorization_denied / recovery_denied,Actor object event outcome UTC time,Alert on repeated unauthorized actions.
+report_verified / report_removed,Actor report ID decision outcome time,Reason/moderator stored on report; audit provides accountability.
+item_recovered,Actor report ID success time,Trace integrity-sensitive state change.
+message_sent / message_reply,Actor report ID event outcome time,No message body in audit; participant privacy preserved.
+registration / login_success / logout,Event actor when authenticated outcome timestamp,Support identity lifecycle review without credential values.

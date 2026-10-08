@@ -11,3 +11,5 @@ tests/.tmp/
 deliverables/qa/
 deliverables/*.zip
 deliverables/package-manifest.json
+deliverables/images/*_raw.jpg
+deliverables/evidence/tests-initial.txt

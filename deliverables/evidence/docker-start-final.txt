@@ -1,0 +1,4 @@
+ Container sse-app-1 Recreate 
+ Container sse-app-1 Recreated 
+ Container sse-app-1 Starting 
+ Container sse-app-1 Started 

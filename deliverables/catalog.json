@@ -1,0 +1,471 @@
+{
+  "project": "Campus Lost and Found",
+  "project_key": "CLF24",
+  "student": {
+    "name": "Marisetti Avinash",
+    "register": "CH.SC.U4CYS23024",
+    "college": "Amrita Vishwa Vidyapeetham Chennai"
+  },
+  "epics": [
+    {
+      "id": "E1",
+      "name": "Identity and session security"
+    },
+    {
+      "id": "E2",
+      "name": "Campus reporting and discovery"
+    },
+    {
+      "id": "E3",
+      "name": "Private contact and recovery"
+    },
+    {
+      "id": "E4",
+      "name": "Moderation and accountability"
+    },
+    {
+      "id": "E5",
+      "name": "Secure build and quality assurance"
+    },
+    {
+      "id": "E6",
+      "name": "Containers and secure deployment"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R01",
+      "title": "Account registration and sign in",
+      "description": "Student and faculty register; administrator is provisioned by operator.",
+      "priority": "Must",
+      "use_case": "UC01",
+      "story": "US01",
+      "test": "test_registration_valid"
+    },
+    {
+      "id": "R02",
+      "title": "Report a lost item",
+      "description": "Capture title description category location and date; create pending report.",
+      "priority": "Must",
+      "use_case": "UC02",
+      "story": "US02",
+      "test": "test_pending_visibility"
+    },
+    {
+      "id": "R03",
+      "title": "Report a found item",
+      "description": "Use the same validated workflow with kind found.",
+      "priority": "Must",
+      "use_case": "UC02",
+      "story": "US03",
+      "test": "test_future_date_rejected"
+    },
+    {
+      "id": "R04",
+      "title": "Search verified reports",
+      "description": "Search title description location and filter kind/category.",
+      "priority": "Must",
+      "use_case": "UC03",
+      "story": "US04",
+      "test": "test_sql_injection_search"
+    },
+    {
+      "id": "R05",
+      "title": "Private owner or finder contact",
+      "description": "Authenticated contact through recipient-scoped internal inbox.",
+      "priority": "Must",
+      "use_case": "UC04",
+      "story": "US05",
+      "test": "test_private_messages_and_reply"
+    },
+    {
+      "id": "R06",
+      "title": "Owner-only recovery",
+      "description": "Only the reporting user can close an open verified report.",
+      "priority": "Must",
+      "use_case": "UC05",
+      "story": "US06",
+      "test": "test_unauthorized_recovery"
+    },
+    {
+      "id": "R07",
+      "title": "Administrator moderation",
+      "description": "Administrator verifies or soft-removes suspicious reports with reason.",
+      "priority": "Must",
+      "use_case": "UC06",
+      "story": "US07",
+      "test": "test_moderation_and_removal"
+    },
+    {
+      "id": "R08",
+      "title": "Personal report tracking",
+      "description": "Owner can see their pending verified and removed reports.",
+      "priority": "Should",
+      "use_case": "UC07",
+      "story": "US08",
+      "test": "test_pending_visibility"
+    },
+    {
+      "id": "R09",
+      "title": "Secure communication and sessions",
+      "description": "TLS cookie security CSRF request limits CSP and password hashing.",
+      "priority": "Must",
+      "use_case": "UC01",
+      "story": "US09",
+      "test": "test_session_cookie_security"
+    },
+    {
+      "id": "R10",
+      "title": "Malicious content prevention",
+      "description": "Escape displayed text and use parameterized SQL and bounded input.",
+      "priority": "Must",
+      "use_case": "UC02",
+      "story": "US10",
+      "test": "test_xss_escaped"
+    },
+    {
+      "id": "R11",
+      "title": "Security audit and monitoring",
+      "description": "Record login denial moderation recovery and message metadata without body or password.",
+      "priority": "Must",
+      "use_case": "UC08",
+      "story": "US11",
+      "test": "test_audit_contains_no_secrets"
+    },
+    {
+      "id": "R12",
+      "title": "Private reply and abuse control",
+      "description": "Recipient-only replies; cap messages at ten per minute per sender.",
+      "priority": "Should",
+      "use_case": "UC04",
+      "story": "US12",
+      "test": "test_message_throttle"
+    },
+    {
+      "id": "R13",
+      "title": "Secure Docker packaging",
+      "description": "Pinned dependencies non-root read-only rootfs least privilege TLS health check.",
+      "priority": "Must",
+      "use_case": "UC09",
+      "story": "US13",
+      "test": "test_health_and_headers"
+    },
+    {
+      "id": "R14",
+      "title": "Kubernetes deployment",
+      "description": "Restricted namespace limits secret PVC ClusterIP network policy.",
+      "priority": "Must",
+      "use_case": "UC09",
+      "story": "US14",
+      "test": "test_host_validation"
+    },
+    {
+      "id": "R15",
+      "title": "Verified delivery pipeline",
+      "description": "Checkout build tests static check dependency audit image package; fail on errors.",
+      "priority": "Must",
+      "use_case": "UC09",
+      "story": "US15",
+      "test": "test_end_to_end_report_verify_contact_recover"
+    },
+    {
+      "id": "R16",
+      "title": "Accessible consistent interface",
+      "description": "Responsive labelled controls error feedback cancel clear and progress views.",
+      "priority": "Should",
+      "use_case": "UC03",
+      "story": "US16",
+      "test": "test_body_limit"
+    }
+  ],
+  "stories": [
+    {
+      "id": "US01",
+      "requirement": "R01",
+      "epic": "E1",
+      "summary": "Account registration and sign in",
+      "story": "As a campus user, I want to register and sign in so that I can access the service safely.",
+      "priority": "Must",
+      "acceptance": [
+        "Student and faculty register; administrator is provisioned by operator.",
+        "Automated check test_registration_valid passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T01",
+      "test": "test_registration_valid"
+    },
+    {
+      "id": "US02",
+      "requirement": "R02",
+      "epic": "E2",
+      "summary": "Report a lost item",
+      "story": "As a student, I want to report a lost item so that I can ask the campus community for help.",
+      "priority": "Must",
+      "acceptance": [
+        "Capture title description category location and date; create pending report.",
+        "Automated check test_pending_visibility passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T02",
+      "test": "test_pending_visibility"
+    },
+    {
+      "id": "US03",
+      "requirement": "R03",
+      "epic": "E2",
+      "summary": "Report a found item",
+      "story": "As a finder, I want to report a found item so that I can return it to its owner.",
+      "priority": "Must",
+      "acceptance": [
+        "Use the same validated workflow with kind found.",
+        "Automated check test_future_date_rejected passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 3,
+      "task": "T03",
+      "test": "test_future_date_rejected"
+    },
+    {
+      "id": "US04",
+      "requirement": "R04",
+      "epic": "E2",
+      "summary": "Search verified reports",
+      "story": "As a campus user, I want to search verified reports so that I can find a matching item.",
+      "priority": "Must",
+      "acceptance": [
+        "Search title description location and filter kind/category.",
+        "Automated check test_sql_injection_search passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T04",
+      "test": "test_sql_injection_search"
+    },
+    {
+      "id": "US05",
+      "requirement": "R05",
+      "epic": "E3",
+      "summary": "Private owner or finder contact",
+      "story": "As a campus user, I want to contact an owner or finder privately so that I can reconnect without publishing my email.",
+      "priority": "Must",
+      "acceptance": [
+        "Authenticated contact through recipient-scoped internal inbox.",
+        "Automated check test_private_messages_and_reply passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T05",
+      "test": "test_private_messages_and_reply"
+    },
+    {
+      "id": "US06",
+      "requirement": "R06",
+      "epic": "E3",
+      "summary": "Owner-only recovery",
+      "story": "As a reporter, I want to mark my report as recovered so that I can record a successful return.",
+      "priority": "Must",
+      "acceptance": [
+        "Only the reporting user can close an open verified report.",
+        "Automated check test_unauthorized_recovery passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T06",
+      "test": "test_unauthorized_recovery"
+    },
+    {
+      "id": "US07",
+      "requirement": "R07",
+      "epic": "E4",
+      "summary": "Administrator moderation",
+      "story": "As a administrator, I want to verify or remove suspicious reports so that I can keep suspicious content off the board.",
+      "priority": "Must",
+      "acceptance": [
+        "Administrator verifies or soft-removes suspicious reports with reason.",
+        "Automated check test_moderation_and_removal passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 5,
+      "task": "T07",
+      "test": "test_moderation_and_removal"
+    },
+    {
+      "id": "US08",
+      "requirement": "R08",
+      "epic": "E2",
+      "summary": "Personal report tracking",
+      "story": "As a reporter, I want to track my own reports so that I can follow verification progress.",
+      "priority": "Should",
+      "acceptance": [
+        "Owner can see their pending verified and removed reports.",
+        "Automated check test_pending_visibility passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 1,
+      "points": 3,
+      "task": "T08",
+      "test": "test_pending_visibility"
+    },
+    {
+      "id": "US09",
+      "requirement": "R09",
+      "epic": "E1",
+      "summary": "Secure communication and sessions",
+      "story": "As a campus user, I want to use secure sessions and communication so that I can protect my account and communication.",
+      "priority": "Must",
+      "acceptance": [
+        "TLS cookie security CSRF request limits CSP and password hashing.",
+        "Automated check test_session_cookie_security passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 5,
+      "task": "T09",
+      "test": "test_session_cookie_security"
+    },
+    {
+      "id": "US10",
+      "requirement": "R10",
+      "epic": "E5",
+      "summary": "Malicious content prevention",
+      "story": "As a campus user, I want to view safely validated content so that I can view reports without executing malicious content.",
+      "priority": "Must",
+      "acceptance": [
+        "Escape displayed text and use parameterized SQL and bounded input.",
+        "Automated check test_xss_escaped passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 5,
+      "task": "T10",
+      "test": "test_xss_escaped"
+    },
+    {
+      "id": "US11",
+      "requirement": "R11",
+      "epic": "E4",
+      "summary": "Security audit and monitoring",
+      "story": "As a administrator, I want to inspect security audit metadata so that I can investigate misuse.",
+      "priority": "Must",
+      "acceptance": [
+        "Record login denial moderation recovery and message metadata without body or password.",
+        "Automated check test_audit_contains_no_secrets passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 3,
+      "task": "T11",
+      "test": "test_audit_contains_no_secrets"
+    },
+    {
+      "id": "US12",
+      "requirement": "R12",
+      "epic": "E3",
+      "summary": "Private reply and abuse control",
+      "story": "As a message recipient, I want to reply privately with abuse controls so that I can reply safely without unsolicited access.",
+      "priority": "Should",
+      "acceptance": [
+        "Recipient-only replies; cap messages at ten per minute per sender.",
+        "Automated check test_message_throttle passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 3,
+      "task": "T12",
+      "test": "test_message_throttle"
+    },
+    {
+      "id": "US13",
+      "requirement": "R13",
+      "epic": "E6",
+      "summary": "Secure Docker packaging",
+      "story": "As a operator, I want to package the application in Docker so that I can run a controlled container.",
+      "priority": "Must",
+      "acceptance": [
+        "Pinned dependencies non-root read-only rootfs least privilege TLS health check.",
+        "Automated check test_health_and_headers passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 5,
+      "task": "T13",
+      "test": "test_health_and_headers"
+    },
+    {
+      "id": "US14",
+      "requirement": "R14",
+      "epic": "E6",
+      "summary": "Kubernetes deployment",
+      "story": "As a operator, I want to deploy the application to Kubernetes so that I can deploy with restricted permissions.",
+      "priority": "Must",
+      "acceptance": [
+        "Restricted namespace limits secret PVC ClusterIP network policy.",
+        "Automated check test_host_validation passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 5,
+      "task": "T14",
+      "test": "test_host_validation"
+    },
+    {
+      "id": "US15",
+      "requirement": "R15",
+      "epic": "E5",
+      "summary": "Verified delivery pipeline",
+      "story": "As a developer, I want to run the verified delivery pipeline so that I can ship tested and checked changes.",
+      "priority": "Must",
+      "acceptance": [
+        "Checkout build tests static check dependency audit image package; fail on errors.",
+        "Automated check test_end_to_end_report_verify_contact_recover passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 5,
+      "task": "T15",
+      "test": "test_end_to_end_report_verify_contact_recover"
+    },
+    {
+      "id": "US16",
+      "requirement": "R16",
+      "epic": "E2",
+      "summary": "Accessible consistent interface",
+      "story": "As a campus user, I want to use an accessible consistent interface so that I can complete tasks with clear feedback.",
+      "priority": "Should",
+      "acceptance": [
+        "Responsive labelled controls error feedback cancel clear and progress views.",
+        "Automated check test_body_limit passes or deployment evidence confirms the control.",
+        "No sensitive credentials are published in the implementation or evidence."
+      ],
+      "sprint": 2,
+      "points": 3,
+      "task": "T16",
+      "test": "test_body_limit"
+    }
+  ],
+  "sprints": [
+    {
+      "number": 1,
+      "name": "Sprint 1 Campus Core",
+      "start": "2026-10-08T09:00:00+05:30",
+      "end": "2026-10-23T09:00:00+05:30",
+      "goal": "Deliver identity reporting search moderation private contact and owner-only recovery."
+    },
+    {
+      "number": 2,
+      "name": "Sprint 2 Secure Delivery",
+      "start": "2026-10-23T09:00:00+05:30",
+      "end": "2026-11-07T09:00:00+05:30",
+      "goal": "Harden the application verify abuse controls and deliver tested Docker Kubernetes and CI packages."
+    }
+  ]
+}

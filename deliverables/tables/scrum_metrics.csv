@@ -1,0 +1,7 @@
+﻿Metric,Interpretation / value
+Sprint 1 committed estimate,36 story points
+Sprint 2 committed estimate,34 story points
+Actual Done story points,70
+Laboratory defects,"Six verified fix groups: invalid-host handling, login throttling, moderation pagination, closed-message UI, vulnerable initial dependencies and the TLS image executable capability."
+Carry-over,"No unresolved implementation defects among the recorded fix groups after retests. Campus SSO, server-side revocation and immutable logging remain production improvement work."
+Velocity interpretation,Completed estimate per sprint in this compressed lab; not an empirically observed fifteen-day team velocity.

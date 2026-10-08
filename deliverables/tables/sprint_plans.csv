@@ -1,0 +1,3 @@
+﻿Sprint,Nominal fifteen-day schedule,Goal,Committed points
+Sprint 1 Campus Core,2026-10-08T09:00:00+05:30 to 2026-10-23T09:00:00+05:30,Deliver identity reporting search moderation private contact and owner-only recovery.,36
+Sprint 2 Secure Delivery,2026-10-23T09:00:00+05:30 to 2026-11-07T09:00:00+05:30,Harden the application verify abuse controls and deliver tested Docker Kubernetes and CI packages.,34

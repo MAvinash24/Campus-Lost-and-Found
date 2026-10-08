@@ -1,0 +1,124 @@
+test_admin_gate (test_app.CampusTests.test_admin_gate) ... ok
+test_anonymous_requires_login (test_app.CampusTests.test_anonymous_requires_login) ... ok
+test_audit_contains_no_secrets (test_app.CampusTests.test_audit_contains_no_secrets) ... ok
+test_body_limit (test_app.CampusTests.test_body_limit) ... ok
+test_contact_closed_or_self_denied (test_app.CampusTests.test_contact_closed_or_self_denied) ... ok
+test_csrf_required (test_app.CampusTests.test_csrf_required) ... ok
+test_email_not_public (test_app.CampusTests.test_email_not_public) ... ok
+test_end_to_end_report_verify_contact_recover (test_app.CampusTests.test_end_to_end_report_verify_contact_recover) ... ok
+test_future_date_rejected (test_app.CampusTests.test_future_date_rejected) ... ok
+test_fuzz_report_boundary (test_app.CampusTests.test_fuzz_report_boundary) ... ok
+test_health_and_headers (test_app.CampusTests.test_health_and_headers) ... ok
+test_host_validation (test_app.CampusTests.test_host_validation) ... ERROR
+test_login_session_rotation (test_app.CampusTests.test_login_session_rotation) ... ok
+test_login_throttling (test_app.CampusTests.test_login_throttling) ... ok
+test_message_throttle (test_app.CampusTests.test_message_throttle) ... ok
+test_moderation_and_removal (test_app.CampusTests.test_moderation_and_removal) ... ok
+test_owner_policy (test_app.CampusTests.test_owner_policy) ... ok
+test_password_not_plaintext (test_app.CampusTests.test_password_not_plaintext) ... ok
+test_pending_cannot_recover (test_app.CampusTests.test_pending_cannot_recover) ... ok
+test_pending_visibility (test_app.CampusTests.test_pending_visibility) ... ok
+test_private_messages_and_reply (test_app.CampusTests.test_private_messages_and_reply) ... ok
+test_recovery_idempotency (test_app.CampusTests.test_recovery_idempotency) ... ok
+test_registration_admin_escalation_denied (test_app.CampusTests.test_registration_admin_escalation_denied) ... ok
+test_registration_valid (test_app.CampusTests.test_registration_valid) ... ok
+test_remove_requires_reason (test_app.CampusTests.test_remove_requires_reason) ... ok
+test_search_wildcards_are_literal (test_app.CampusTests.test_search_wildcards_are_literal) ... ok
+test_session_cookie_security (test_app.CampusTests.test_session_cookie_security) ... ok
+test_sql_injection_search (test_app.CampusTests.test_sql_injection_search) ... ok
+test_text_validation_bounds (test_app.CampusTests.test_text_validation_bounds) ... ok
+test_unauthorized_recovery (test_app.CampusTests.test_unauthorized_recovery) ... ok
+test_xss_escaped (test_app.CampusTests.test_xss_escaped) ... ok
+
+======================================================================
+ERROR: test_host_validation (test_app.CampusTests.test_host_validation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\sse\.runtime\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "D:\sse\.runtime\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\ctx.py", line 323, in __init__
+    self.url_adapter = app.create_url_adapter(self.request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 450, in create_url_adapter
+    request.host = get_host(request.environ, request.trusted_hosts)  # pyright: ignore
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\wsgi.py", line 106, in get_host
+    return _sansio_utils.get_host(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\sansio\utils.py", line 100, in get_host
+    raise SecurityError(f"Host {host!r} is not trusted.")
+werkzeug.exceptions.SecurityError: 400 Bad Request: Host 'evil.example' is not trusted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\sse\tests\test_app.py", line 73, in test_host_validation
+    self.assertEqual(self.client.get('/healthz',headers={'Host':'evil.example'}).status_code,400)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\test.py", line 1162, in get
+    return self.open(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\testing.py", line 235, in open
+    response = super().open(
+               ^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\test.py", line 1116, in open
+    response_parts = self.run_wsgi_app(request.environ, buffered=buffered)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\test.py", line 988, in run_wsgi_app
+    rv = run_wsgi_app(self.application, environ, buffered=buffered)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\werkzeug\test.py", line 1264, in run_wsgi_app
+    app_rv = app(environ, start_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\app.py", line 316, in expected_error
+    return render_template('error.html', code=error.code, message=error.description), error.code
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "D:\sse\.runtime\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\sse\templates\error.html", line 1, in top-level template code
+    {% extends 'base.html' %}{% block content %}<section class="panel empty"><p class="eyebrow">Request could not be completed</p><h1>{{ code }}</h1><p>{{ message }}</p><a class="button primary" href="{{ url_for('items') }}">Return to browse</a></section>{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\templates\base.html", line 1, in top-level template code
+    <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{% block title %}Campus Lost and Found{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\sse\.runtime\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'build'
+
+----------------------------------------------------------------------
+Ran 31 tests in 107.283s
+
+FAILED (errors=1)

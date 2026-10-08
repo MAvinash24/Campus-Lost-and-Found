@@ -1,0 +1,50 @@
+[
+  {
+    "name": "/sse-app-1",
+    "image_id": "sha256:14c0f36b96b9336f56e17e4b74de4fd4fdc051b72765f29018394e75affb9829",
+    "user": "10001:10001",
+    "running": true,
+    "health": "healthy",
+    "read_only": true,
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_options": [
+      "no-new-privileges:true"
+    ],
+    "memory_bytes": 268435456,
+    "nano_cpus": 1000000000,
+    "port_bindings": {
+      "8080/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "8080"
+        }
+      ]
+    }
+  },
+  {
+    "name": "/sse-tls-1",
+    "image_id": "sha256:31b34af01e55164dd194dc6856fe14e2488d1dea5c4470235d5591df1c12cd85",
+    "user": "10001:10001",
+    "running": true,
+    "health": null,
+    "read_only": true,
+    "cap_drop": [
+      "ALL"
+    ],
+    "security_options": [
+      "no-new-privileges:true"
+    ],
+    "memory_bytes": 134217728,
+    "nano_cpus": 0,
+    "port_bindings": {
+      "8443/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "8443"
+        }
+      ]
+    }
+  }
+]

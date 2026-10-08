@@ -1,0 +1,54 @@
+{
+  "base_url": "https://localhost:18443",
+  "passed": true,
+  "steps": [
+    {
+      "step": "student login",
+      "status": 200
+    },
+    {
+      "step": "faculty login",
+      "status": 200
+    },
+    {
+      "step": "administrator login",
+      "status": 200
+    },
+    {
+      "step": "report pending",
+      "report": 1,
+      "status": 200
+    },
+    {
+      "step": "pending report hidden from other user",
+      "status": 404
+    },
+    {
+      "step": "administrator verification",
+      "status": 200
+    },
+    {
+      "step": "cross-user recovery denied",
+      "status": 403
+    },
+    {
+      "step": "private message without email disclosure",
+      "status": 200
+    },
+    {
+      "step": "reporter recovery",
+      "status": 200
+    }
+  ],
+  "tls": {
+    "version": "TLSv1.3",
+    "cipher": "TLS_AES_128_GCM_SHA256",
+    "certificate_validation": "passed against local lab CA",
+    "hostname_validation": "localhost passed"
+  },
+  "headers": {
+    "Content-Security-Policy": "default-src 'self'; style-src 'self'; script-src 'none'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+    "Strict-Transport-Security": "max-age=31536000",
+    "X-Content-Type-Options": "nosniff"
+  }
+}

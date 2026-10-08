@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-08",
+  "report": "CLF-6",
+  "steps": [
+    "Student sign in",
+    "Submit report: Open Pending",
+    "Administrator verify: Open Verified",
+    "Faculty sends private message",
+    "Student sees private inbox and replies",
+    "Reporter marks Recovered Verified"
+  ],
+  "result": "passed",
+  "screenshots": [
+    "ui_login.jpg",
+    "ui_browse.jpg",
+    "ui_report.jpg",
+    "ui_admin.jpg",
+    "ui_contact.jpg",
+    "ui_inbox.jpg",
+    "ui_recovered.jpg"
+  ]
+}

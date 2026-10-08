@@ -1,0 +1,1886 @@
+{
+  "epics": {
+    "E1": "CLF24-1",
+    "E2": "CLF24-2",
+    "E3": "CLF24-3",
+    "E4": "CLF24-4",
+    "E5": "CLF24-5",
+    "E6": "CLF24-6"
+  },
+  "stories": {
+    "US01": "CLF24-7",
+    "US02": "CLF24-9",
+    "US03": "CLF24-11",
+    "US04": "CLF24-13",
+    "US05": "CLF24-15",
+    "US06": "CLF24-17",
+    "US07": "CLF24-19",
+    "US08": "CLF24-21",
+    "US09": "CLF24-23",
+    "US10": "CLF24-25",
+    "US11": "CLF24-27",
+    "US12": "CLF24-29",
+    "US13": "CLF24-31",
+    "US14": "CLF24-33",
+    "US15": "CLF24-35",
+    "US16": "CLF24-37"
+  },
+  "tasks": {
+    "T01": "CLF24-8",
+    "T02": "CLF24-10",
+    "T03": "CLF24-12",
+    "T04": "CLF24-14",
+    "T05": "CLF24-16",
+    "T06": "CLF24-18",
+    "T07": "CLF24-20",
+    "T08": "CLF24-22",
+    "T09": "CLF24-24",
+    "T10": "CLF24-26",
+    "T11": "CLF24-28",
+    "T12": "CLF24-30",
+    "T13": "CLF24-32",
+    "T14": "CLF24-34",
+    "T15": "CLF24-36",
+    "T16": "CLF24-38"
+  },
+  "sprints": {
+    "1": {
+      "id": 297,
+      "self": "https://mavinash.atlassian.net/rest/agile/1.0/sprint/297",
+      "state": "active",
+      "name": "Sprint 1 Campus Core",
+      "startDate": "2026-10-08T03:30:00.000Z",
+      "endDate": "2026-10-23T03:30:00.000Z",
+      "createdDate": "2026-10-08T04:45:18.297Z",
+      "originBoardId": 236,
+      "goal": "Deliver identity reporting search moderation private contact and owner-only recovery. Compressed laboratory execution; dates are nominal fifteen-day plan."
+    },
+    "2": {
+      "id": 298,
+      "self": "https://mavinash.atlassian.net/rest/agile/1.0/sprint/298",
+      "state": "future",
+      "name": "Sprint 2 Secure Delivery",
+      "startDate": "2026-10-23T03:30:00.000Z",
+      "endDate": "2026-11-07T03:30:00.000Z",
+      "createdDate": "2026-10-08T04:45:20.957Z",
+      "originBoardId": 236,
+      "goal": "Harden the application verify abuse controls and deliver tested Docker Kubernetes and CI packages. Nominal 15-day plan; execution is a compressed lab demonstration."
+    }
+  },
+  "history": [
+    {
+      "issue": "CLF24-7",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:03:20.588699+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:03:22.611548+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:03:24.777333+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:03:26.663347+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:23:27.097888+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:23:28.421661+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:23:29.415048+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:23:30.620209+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:03.440773+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:04.561675+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-8",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:06.972976+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-10",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:08.690420+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-10",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:09.918570+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-10",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:10.967600+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-12",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:12.798266+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-12",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:13.924054+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-12",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:15.066739+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-14",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:17.207250+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-14",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:18.449875+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-14",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:19.779178+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-16",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:22.755727+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-16",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:24.790363+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-16",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:25.997887+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-18",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:27.818543+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-18",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:29.028592+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-18",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:30.080825+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-20",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:32.324341+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-20",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:33.428621+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-20",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:34.555341+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-22",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:36.358490+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-22",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:37.605818+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-22",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:38.596137+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-24",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:40.209163+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-24",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:41.626194+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-24",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:42.727895+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-26",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:44.842946+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-26",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:45.906923+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-26",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:47.044898+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-28",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:49.197848+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-28",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:50.566885+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-28",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:52.014195+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-30",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:25:54.060529+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-30",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:25:55.451340+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-30",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:25:57.311687+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-32",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:01.616288+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-32",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:03.578782+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-32",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:04.890755+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-34",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:07.105399+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-34",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:08.659405+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-34",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:10.909135+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-36",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:13.345035+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-36",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:14.439175+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-36",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:16.317659+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-38",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:19.406870+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-38",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:20.750094+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-38",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:22.250785+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:24.869313+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:27.272071+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-7",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:28.784638+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-9",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:32.111718+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-9",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:33.365116+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-9",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:34.768562+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-11",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:37.403892+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-11",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:39.938237+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-11",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:41.044335+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-13",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:43.510683+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-13",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:44.935596+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-13",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:46.526028+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-15",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:48.781100+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-15",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:50.085453+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-15",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:51.613226+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-17",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:53.541023+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-17",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:54.865845+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-17",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:26:56.237116+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-19",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:26:58.197258+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-19",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:26:59.433842+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-19",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:00.590330+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-21",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:06.180216+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-21",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:07.535536+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-21",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:09.014280+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-23",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:11.787103+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-23",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:13.231590+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-23",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:14.241120+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-25",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:16.211430+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-25",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:17.252293+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-25",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:18.312431+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-27",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:20.302991+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-27",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:21.623279+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-27",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:22.743221+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-29",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:24.675683+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-29",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:26.027046+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-29",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:27.110822+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-31",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:28.779620+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-31",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:29.745584+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-31",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:31.114858+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-33",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:33.096128+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-33",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:34.344153+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-33",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:35.453239+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-35",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:37.200922+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-35",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:38.053556+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-35",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:39.172747+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-37",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:41.253514+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-37",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:43.049717+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-37",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:44.349772+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-1",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:47.252533+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-1",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:48.247752+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-1",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:49.283047+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-2",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:51.145818+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-2",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:52.325533+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-2",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:53.300740+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-3",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:55.308393+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-3",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:27:56.241039+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-3",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:27:57.208417+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-4",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:27:59.095289+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-4",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:28:00.294347+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-4",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:28:01.451669+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-5",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:28:03.130358+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-5",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:28:04.379886+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-5",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:28:05.387650+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-6",
+      "target": "In Progress",
+      "timestamp": "2026-10-08T05:28:07.029102+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-6",
+      "target": "Testing",
+      "timestamp": "2026-10-08T05:28:08.149870+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    },
+    {
+      "issue": "CLF24-6",
+      "target": "Done",
+      "timestamp": "2026-10-08T05:28:09.173475+00:00",
+      "execution": "actual API transition during compressed lab demo"
+    }
+  ],
+  "accountId": "712020:77a5f8a8-eaa0-43c0-8772-6b52764729fd",
+  "displayName": "Marisetti Avinash",
+  "site": "https://mavinash.atlassian.net",
+  "project": {
+    "self": "https://mavinash.atlassian.net/rest/api/3/project/10268",
+    "id": 10268,
+    "key": "CLF24"
+  },
+  "types": {
+    "Task": "10213",
+    "Sub-task": "10214",
+    "Story": "10012",
+    "Bug": "10321",
+    "Epic": "10000"
+  },
+  "board": {
+    "id": 236,
+    "self": "https://mavinash.atlassian.net/rest/agile/1.0/board/236",
+    "name": "CLF24 board",
+    "type": "scrum",
+    "location": {
+      "projectId": 10268,
+      "displayName": "Campus Lost and Found Secure Software Lab (CLF24)",
+      "projectName": "Campus Lost and Found Secure Software Lab",
+      "projectKey": "CLF24",
+      "projectTypeKey": "software",
+      "avatarURI": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10402?size=small",
+      "name": "Campus Lost and Found Secure Software Lab (CLF24)"
+    },
+    "isPrivate": false
+  },
+  "statusCreate": [
+    {
+      "id": "10304",
+      "name": "Testing",
+      "statusCategory": "IN_PROGRESS",
+      "scope": {
+        "type": "GLOBAL"
+      },
+      "description": ""
+    }
+  ],
+  "workflowAttempt": {
+    "error": 405,
+    "detail": "{\"type\":\"about:blank\",\"title\":\"Method Not Allowed\",\"status\":405,\"detail\":\"Method 'POST' is not supported.\",\"instance\":\"/rest/api/3/workflow\"}"
+  },
+  "points_field": "customfield_10034",
+  "setup_complete": true,
+  "workflowCreateV2": {
+    "statuses": [
+      {
+        "id": "10200",
+        "statusReference": "10200",
+        "name": "Done",
+        "statusCategory": "DONE",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "10304",
+        "statusReference": "10304",
+        "name": "Testing",
+        "statusCategory": "IN_PROGRESS",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "10199",
+        "statusReference": "10199",
+        "name": "To Do",
+        "statusCategory": "TODO",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "3",
+        "statusReference": "3",
+        "name": "In Progress",
+        "statusCategory": "IN_PROGRESS",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": "This work item is being actively worked on at the moment by the assignee."
+      }
+    ],
+    "workflows": [
+      {
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "version": {
+          "versionNumber": 0,
+          "id": "e2c197de-cd68-4d04-821d-f78f452b5fde"
+        },
+        "id": "679b0c7a-5df1-4ee4-99d4-81fcbd088352",
+        "name": "CLF24 Campus Lab Workflow",
+        "description": "Dedicated four-stage secure software lab workflow",
+        "isEditable": true,
+        "startPointLayout": {
+          "x": 0.0,
+          "y": 0.0
+        },
+        "statuses": [
+          {
+            "statusReference": "10199",
+            "layout": {
+              "x": 200.0,
+              "y": 100.0
+            },
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "3",
+            "layout": {
+              "x": 450.0,
+              "y": 100.0
+            },
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "10304",
+            "layout": {
+              "x": 700.0,
+              "y": 100.0
+            },
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "10200",
+            "layout": {
+              "x": 950.0,
+              "y": 100.0
+            },
+            "properties": {},
+            "deprecated": false
+          }
+        ],
+        "transitions": [
+          {
+            "id": "10",
+            "type": "GLOBAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "To Do",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          },
+          {
+            "id": "20",
+            "type": "GLOBAL",
+            "toStatusReference": "3",
+            "links": [],
+            "name": "In Progress",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          },
+          {
+            "id": "30",
+            "type": "GLOBAL",
+            "toStatusReference": "10304",
+            "links": [],
+            "name": "Testing",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          },
+          {
+            "id": "40",
+            "type": "GLOBAL",
+            "toStatusReference": "10200",
+            "links": [],
+            "name": "Done",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          },
+          {
+            "id": "1",
+            "type": "INITIAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "Create",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          }
+        ]
+      }
+    ]
+  },
+  "workflowScheme": {
+    "id": 10270,
+    "name": "CLF24 Campus Lab Scheme",
+    "defaultWorkflow": "CLF24 Campus Lab Workflow",
+    "issueTypeMappings": {},
+    "draft": false,
+    "self": "https://mavinash.atlassian.net/rest/api/3/workflowscheme/10270",
+    "issueTypes": {
+      "10214": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10214",
+        "id": "10214",
+        "description": "A small piece of work that's part of a larger task.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10316?size=medium",
+        "name": "Sub-task",
+        "subtask": true,
+        "avatarId": 10316,
+        "hierarchyLevel": -1
+      },
+      "10012": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10012",
+        "id": "10012",
+        "description": "Created by Jira Agile - do not edit or delete. Issue type for a user story.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium",
+        "name": "Story",
+        "subtask": false,
+        "avatarId": 10300,
+        "hierarchyLevel": 0
+      },
+      "10210": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10210",
+        "id": "10210",
+        "description": "Submit a request or report a problem.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "Submit a request or incident",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "10211": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10211",
+        "id": "10211",
+        "description": "Have a question? Submit it here.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10320?size=medium",
+        "name": "Ask a question",
+        "subtask": false,
+        "avatarId": 10320,
+        "hierarchyLevel": 0
+      },
+      "10212": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10212",
+        "id": "10212",
+        "description": "Request received from your email support channel.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10306?size=medium",
+        "name": "Emailed request",
+        "subtask": false,
+        "avatarId": 10306,
+        "hierarchyLevel": 0
+      },
+      "10213": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10213",
+        "id": "10213",
+        "description": "A small, distinct piece of work.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10318?size=medium",
+        "name": "Task",
+        "subtask": false,
+        "avatarId": 10318,
+        "hierarchyLevel": 0
+      },
+      "10321": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10321",
+        "id": "10321",
+        "description": "A problem or error.",
+        "iconUrl": "https://mavinash.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10303?size=medium",
+        "name": "Bug",
+        "subtask": false,
+        "avatarId": 10303,
+        "hierarchyLevel": 0
+      },
+      "10000": {
+        "self": "https://mavinash.atlassian.net/rest/api/3/issuetype/10000",
+        "id": "10000",
+        "description": "A collection of related bugs, stories, and tasks.",
+        "iconUrl": "https://mavinash.atlassian.net/images/icons/issuetypes/epic.svg",
+        "name": "Epic",
+        "subtask": false,
+        "hierarchyLevel": 1
+      }
+    }
+  },
+  "workflowAssign": {
+    "error": 400,
+    "detail": "{\"errorMessages\":[\"Only empty projects can have workflow schemes assigned.\"],\"errors\":{}}"
+  },
+  "associatedWorkflowScheme": {
+    "values": [
+      {
+        "projectIds": [
+          "10268"
+        ],
+        "workflowScheme": {
+          "id": 10269,
+          "name": "CLF24: Software Simplified Workflow Scheme",
+          "description": "Generated by JIRA Software version 1001.0.0-SNAPSHOT. This workflow scheme is managed internally by Jira. Do not manually modify this workflow scheme.",
+          "defaultWorkflow": "Software Simplified Workflow for Project CLF24",
+          "issueTypeMappings": {},
+          "self": "https://mavinash.atlassian.net/rest/api/3/workflowscheme/10269"
+        }
+      }
+    ]
+  },
+  "workflowRead": {
+    "statuses": [
+      {
+        "id": "10200",
+        "statusReference": "10200",
+        "name": "Done",
+        "statusCategory": "DONE",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "10199",
+        "statusReference": "10199",
+        "name": "To Do",
+        "statusCategory": "TODO",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "3",
+        "statusReference": "3",
+        "name": "In Progress",
+        "statusCategory": "IN_PROGRESS",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": "This work item is being actively worked on at the moment by the assignee."
+      }
+    ],
+    "workflows": [
+      {
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "version": {
+          "versionNumber": 0,
+          "id": "aa84ab14-72c5-4d2e-af68-527d227f46e9"
+        },
+        "id": "6beaea39-2e83-4ec6-9210-d9af771b6b3a",
+        "name": "Software Simplified Workflow for Project CLF24",
+        "description": "Generated by JIRA Software version 1001.0.0-SNAPSHOT. This workflow is managed internally by Jira. Do not manually modify this workflow.",
+        "isEditable": true,
+        "startPointLayout": {},
+        "statuses": [
+          {
+            "statusReference": "10199",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "3",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "10200",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          }
+        ],
+        "transitions": [
+          {
+            "id": "11",
+            "type": "GLOBAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "To Do",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "",
+                  "mode": ""
+                },
+                "id": "1892134020"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.todo"
+            }
+          },
+          {
+            "id": "21",
+            "type": "GLOBAL",
+            "toStatusReference": "3",
+            "links": [],
+            "name": "In Progress",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "",
+                  "mode": ""
+                },
+                "id": "210284696"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.inprogress"
+            }
+          },
+          {
+            "id": "31",
+            "type": "GLOBAL",
+            "toStatusReference": "10200",
+            "links": [],
+            "name": "Done",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "10000",
+                  "mode": "replace"
+                },
+                "id": "91409416"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.done"
+            }
+          },
+          {
+            "id": "1",
+            "type": "INITIAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "Create",
+            "description": "",
+            "actions": [],
+            "validators": [
+              {
+                "ruleKey": "system:check-permission-validator",
+                "parameters": {
+                  "permissionKey": "CREATE_ISSUES"
+                },
+                "id": "26b70309-d920-46d2-a397-8cd4ffd5577a"
+              }
+            ],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "common.forms.create"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "workflowProjectUsages": {
+    "workflowId": "6beaea39-2e83-4ec6-9210-d9af771b6b3a",
+    "projects": {
+      "nextPageToken": null,
+      "values": [
+        {
+          "id": "10268"
+        }
+      ]
+    }
+  },
+  "workflowUpdate": {
+    "statuses": [
+      {
+        "id": "10200",
+        "statusReference": "10200",
+        "name": "Done",
+        "statusCategory": "DONE",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "10304",
+        "statusReference": "10304",
+        "name": "Testing",
+        "statusCategory": "IN_PROGRESS",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": "Verification before completion"
+      },
+      {
+        "id": "10199",
+        "statusReference": "10199",
+        "name": "To Do",
+        "statusCategory": "TODO",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": ""
+      },
+      {
+        "id": "3",
+        "statusReference": "3",
+        "name": "In Progress",
+        "statusCategory": "IN_PROGRESS",
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "description": "This work item is being actively worked on at the moment by the assignee."
+      }
+    ],
+    "workflows": [
+      {
+        "scope": {
+          "type": "GLOBAL"
+        },
+        "version": {
+          "versionNumber": 1,
+          "id": "67591ba8-7e81-436c-9a8a-c6590fe748a1"
+        },
+        "id": "6beaea39-2e83-4ec6-9210-d9af771b6b3a",
+        "name": "Software Simplified Workflow for Project CLF24",
+        "description": "Generated by JIRA Software version 1001.0.0-SNAPSHOT. This workflow is managed internally by Jira. Do not manually modify this workflow.",
+        "isEditable": true,
+        "startPointLayout": {},
+        "statuses": [
+          {
+            "statusReference": "10199",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "3",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "10200",
+            "layout": {},
+            "properties": {},
+            "deprecated": false
+          },
+          {
+            "statusReference": "10304",
+            "layout": {
+              "x": 450.0,
+              "y": 0.0
+            },
+            "properties": {},
+            "deprecated": false
+          }
+        ],
+        "transitions": [
+          {
+            "id": "11",
+            "type": "GLOBAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "To Do",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "",
+                  "mode": ""
+                },
+                "id": "1892134020"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.todo"
+            }
+          },
+          {
+            "id": "21",
+            "type": "GLOBAL",
+            "toStatusReference": "3",
+            "links": [],
+            "name": "In Progress",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "",
+                  "mode": ""
+                },
+                "id": "210284696"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.inprogress"
+            }
+          },
+          {
+            "id": "31",
+            "type": "GLOBAL",
+            "toStatusReference": "10200",
+            "links": [],
+            "name": "Done",
+            "description": "",
+            "actions": [
+              {
+                "ruleKey": "system:update-field",
+                "parameters": {
+                  "field": "resolution",
+                  "value": "10000",
+                  "mode": "replace"
+                },
+                "id": "91409416"
+              }
+            ],
+            "validators": [],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "gh.workflow.preset.done"
+            }
+          },
+          {
+            "id": "41",
+            "type": "GLOBAL",
+            "toStatusReference": "10304",
+            "links": [],
+            "name": "Testing",
+            "description": "",
+            "actions": [],
+            "validators": [],
+            "triggers": [],
+            "properties": {}
+          },
+          {
+            "id": "1",
+            "type": "INITIAL",
+            "toStatusReference": "10199",
+            "links": [],
+            "name": "Create",
+            "description": "",
+            "actions": [],
+            "validators": [
+              {
+                "ruleKey": "system:check-permission-validator",
+                "parameters": {
+                  "permissionKey": "CREATE_ISSUES"
+                },
+                "id": "3c0bb8b6-4ed8-4ab0-89ef-289f82278f7e"
+              }
+            ],
+            "triggers": [],
+            "properties": {
+              "jira.i18n.title": "common.forms.create"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sprint1Start": {
+    "id": 297,
+    "self": "https://mavinash.atlassian.net/rest/agile/1.0/sprint/297",
+    "state": "active",
+    "name": "Sprint 1 Campus Core",
+    "startDate": "2026-10-08T03:30:00.000Z",
+    "endDate": "2026-10-23T03:30:00.000Z",
+    "createdDate": "2026-10-08T04:45:18.297Z",
+    "originBoardId": 236,
+    "goal": "Deliver identity reporting search moderation private contact and owner-only recovery. Compressed laboratory execution; dates are nominal fifteen-day plan."
+  },
+  "boardConfig": {
+    "id": 236,
+    "name": "CLF24 board",
+    "type": "scrum",
+    "self": "https://mavinash.atlassian.net/rest/agile/1.0/board/236/configuration",
+    "location": {
+      "type": "project",
+      "key": "CLF24",
+      "id": "10268",
+      "self": "https://mavinash.atlassian.net/rest/api/2/project/10268",
+      "name": "Campus Lost and Found Secure Software Lab"
+    },
+    "filter": {
+      "id": "10235",
+      "self": "https://mavinash.atlassian.net/rest/api/2/filter/10235"
+    },
+    "columnConfig": {
+      "columns": [
+        {
+          "name": "To Do",
+          "statuses": [
+            {
+              "id": "10199",
+              "self": "https://mavinash.atlassian.net/rest/api/2/status/10199"
+            }
+          ]
+        },
+        {
+          "name": "In Progress",
+          "statuses": [
+            {
+              "id": "3",
+              "self": "https://mavinash.atlassian.net/rest/api/2/status/3"
+            }
+          ]
+        },
+        {
+          "name": "Testing",
+          "statuses": [
+            {
+              "id": "10304",
+              "self": "https://mavinash.atlassian.net/rest/api/2/status/10304"
+            }
+          ]
+        },
+        {
+          "name": "Done",
+          "statuses": [
+            {
+              "id": "10200",
+              "self": "https://mavinash.atlassian.net/rest/api/2/status/10200"
+            }
+          ]
+        }
+      ],
+      "constraintType": "none"
+    },
+    "estimation": {
+      "type": "field",
+      "field": {
+        "fieldId": "customfield_10034",
+        "displayName": "Story Points"
+      }
+    },
+    "ranking": {
+      "rankCustomFieldId": 10019
+    }
+  },
+  "final_verified": true,
+  "verifiedIssues": [
+    {
+      "reference": "E1",
+      "key": "CLF24-1",
+      "summary": "E1 Identity and session security",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "E2",
+      "key": "CLF24-2",
+      "summary": "E2 Campus reporting and discovery",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "E3",
+      "key": "CLF24-3",
+      "summary": "E3 Private contact and recovery",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "E4",
+      "key": "CLF24-4",
+      "summary": "E4 Moderation and accountability",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "E5",
+      "key": "CLF24-5",
+      "summary": "E5 Secure build and quality assurance",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "E6",
+      "key": "CLF24-6",
+      "summary": "E6 Containers and secure deployment",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "US01",
+      "key": "CLF24-7",
+      "summary": "US01 Account registration and sign in",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US02",
+      "key": "CLF24-9",
+      "summary": "US02 Report a lost item",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US03",
+      "key": "CLF24-11",
+      "summary": "US03 Report a found item",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US04",
+      "key": "CLF24-13",
+      "summary": "US04 Search verified reports",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US05",
+      "key": "CLF24-15",
+      "summary": "US05 Private owner or finder contact",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US06",
+      "key": "CLF24-17",
+      "summary": "US06 Owner-only recovery",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US07",
+      "key": "CLF24-19",
+      "summary": "US07 Administrator moderation",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US08",
+      "key": "CLF24-21",
+      "summary": "US08 Personal report tracking",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "US09",
+      "key": "CLF24-23",
+      "summary": "US09 Secure communication and sessions",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US10",
+      "key": "CLF24-25",
+      "summary": "US10 Malicious content prevention",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US11",
+      "key": "CLF24-27",
+      "summary": "US11 Security audit and monitoring",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US12",
+      "key": "CLF24-29",
+      "summary": "US12 Private reply and abuse control",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "US13",
+      "key": "CLF24-31",
+      "summary": "US13 Secure Docker packaging",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US14",
+      "key": "CLF24-33",
+      "summary": "US14 Kubernetes deployment",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US15",
+      "key": "CLF24-35",
+      "summary": "US15 Verified delivery pipeline",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "High"
+    },
+    {
+      "reference": "US16",
+      "key": "CLF24-37",
+      "summary": "US16 Accessible consistent interface",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T01",
+      "key": "CLF24-8",
+      "summary": "T01 Implement and verify Account registration and sign in",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T02",
+      "key": "CLF24-10",
+      "summary": "T02 Implement and verify Report a lost item",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T03",
+      "key": "CLF24-12",
+      "summary": "T03 Implement and verify Report a found item",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T04",
+      "key": "CLF24-14",
+      "summary": "T04 Implement and verify Search verified reports",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T05",
+      "key": "CLF24-16",
+      "summary": "T05 Implement and verify Private owner or finder contact",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T06",
+      "key": "CLF24-18",
+      "summary": "T06 Implement and verify Owner-only recovery",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T07",
+      "key": "CLF24-20",
+      "summary": "T07 Implement and verify Administrator moderation",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T08",
+      "key": "CLF24-22",
+      "summary": "T08 Implement and verify Personal report tracking",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T09",
+      "key": "CLF24-24",
+      "summary": "T09 Implement and verify Secure communication and sessions",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T10",
+      "key": "CLF24-26",
+      "summary": "T10 Implement and verify Malicious content prevention",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T11",
+      "key": "CLF24-28",
+      "summary": "T11 Implement and verify Security audit and monitoring",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T12",
+      "key": "CLF24-30",
+      "summary": "T12 Implement and verify Private reply and abuse control",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T13",
+      "key": "CLF24-32",
+      "summary": "T13 Implement and verify Secure Docker packaging",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T14",
+      "key": "CLF24-34",
+      "summary": "T14 Implement and verify Kubernetes deployment",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T15",
+      "key": "CLF24-36",
+      "summary": "T15 Implement and verify Verified delivery pipeline",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    },
+    {
+      "reference": "T16",
+      "key": "CLF24-38",
+      "summary": "T16 Implement and verify Accessible consistent interface",
+      "status": "Done",
+      "assignee": "Marisetti Avinash",
+      "priority": "Medium"
+    }
+  ],
+  "verifiedAt": "2026-10-08T05:28:25.812600+00:00"
+}
