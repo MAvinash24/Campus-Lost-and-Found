@@ -1,0 +1,9 @@
+﻿Asset,Owner or custodian,Location and protection objective
+A1 A2 Credentials and identity,Account holder; identity service and operator are custodians.,D1 users in SQLite. Protect hashes and email confidentiality; prevent forged roles or identity changes.
+A3 Private messages,Sender and recipient; operator controls storage.,D3 messages. Restrict application access to participants; protect body confidentiality and recipient integrity.
+A4 Reports and recovery,Report creator; application enforces authority.,D2 reports. Preserve creator ownership and valid pending verified removed and recovered states.
+A5 Moderation decisions,Administrator; application records decisions.,D2 moderator reason and state. Prevent ordinary users from verifying or removing reports.
+A6 Audit metadata,Administrator reviewer; operator custodian.,D4 audit events. Preserve actor object outcome and time; exclude secrets and message bodies. External immutable retention is future work.
+A7 Session and CSRF authority,Operator manages signing secret; application issues sessions.,Runtime secret and browser session cookie. Prevent forgery and disclosure; derive authority from the current database user.
+A8 Private storage and backups,Operator.,Docker volume or Kubernetes PVC and controlled backups. Protect all stored data and restore availability; at-rest encryption is operational.
+A9 Build and dependencies,Developer and deployment operator.,Pinned requirements container image and CI configuration. Preserve dependency and executable integrity before deployment.

@@ -1,0 +1,88 @@
+{
+  "original_text_nodes": 1160,
+  "preserved_original_text_nodes": 1160,
+  "original_text_unchanged": true,
+  "old_diagrams_replaced": 9,
+  "new_diagrams_added": 3,
+  "total_new_diagrams": 12,
+  "original_tables": 39,
+  "updated_tables": 39,
+  "original_images": 22,
+  "updated_images": 25,
+  "changes": [
+    {
+      "operation": "replace",
+      "old_media": "word/media/image1.png",
+      "new_image": "01_use_cases_campus.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image2.png",
+      "new_image": "03_analysis_sequence.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image3.png",
+      "new_image": "04_entity_relationship.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image4.png",
+      "new_image": "05_dfd_level_0.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image5.png",
+      "new_image": "06_dfd_level_1.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image6.png",
+      "new_image": "08_application_architecture.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image14.png",
+      "new_image": "09_sensitive_information_flow.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image15.png",
+      "new_image": "10_attack_tree.png"
+    },
+    {
+      "operation": "replace",
+      "old_media": "word/media/image16.png",
+      "new_image": "11_security_refined_architecture.png"
+    },
+    {
+      "operation": "insert",
+      "caption": "Figure 1A  Administration and operations use cases",
+      "new_image": "02_use_cases_administration.png"
+    },
+    {
+      "operation": "insert",
+      "caption": "Figure 5A  Detailed Level 2 DFD for creator-only recovery",
+      "new_image": "07_dfd_level_2_recovery.png"
+    },
+    {
+      "operation": "insert",
+      "caption": "Figure 16A  Report moderation and recovery lifecycle",
+      "new_image": "12_report_lifecycle.png"
+    }
+  ],
+  "original_docx_sha256": "334947f516900ba58179e355135a24b6928105646100419cd05f2f3d9c3292a2",
+  "pdf": {
+    "pages": 49,
+    "rendered_from_updated_docx": true,
+    "original_word_text_entries_preserved": 1160,
+    "original_word_text_entries_checked": 1160,
+    "original_pdf_substantive_lines_preserved": 1368,
+    "original_pdf_substantive_lines_checked": 1368,
+    "old_diagrams_replaced": 9,
+    "new_diagrams_added": 3,
+    "all_49_rendered_pages_visually_reviewed": true,
+    "original_pdf_sha256": "0769525768c1f25dab36dc679e4eeca65507b6a15c95a096b0613d3cd1a4b9af"
+  },
+  "source_files_unchanged": true
+}

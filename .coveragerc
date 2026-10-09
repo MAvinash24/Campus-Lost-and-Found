@@ -1,0 +1,11 @@
+[run]
+source = app
+relative_files = True
+branch = True
+data_file = .sonar-evidence/.coverage
+
+[report]
+show_missing = True
+
+[xml]
+output = .sonar-evidence/coverage.xml

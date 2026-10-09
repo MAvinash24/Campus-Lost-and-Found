@@ -1,0 +1,7 @@
+﻿Area,Specification
+Environment,A modern browser and local Docker or isolated kind Kubernetes deployment; Python Flask Gunicorn Caddy and SQLite versions are pinned in the submitted configuration.
+Campus identity,Lab registration records the chosen student or faculty role without independently proving membership. Campus SSO or verified institutional email is required before campus production use.
+Provisioning,Only the operator provisions administrators and manages runtime secrets. Public registration cannot select administrator authority.
+Moderation and handover,Administrators review pending reports; reporter and recipient arrange handover. Software confirmation does not prove physical possession.
+Persistence and recovery,"SQLite volume or PVC stores private data. Operator-controlled access, backups, retention and restoration procedures are required."
+Deployment limits,"TLS clients must trust the lab CA. Production requires a trusted campus certificate. NetworkPolicy configuration is supplied, but enforcement by the default kind CNI is not verified."

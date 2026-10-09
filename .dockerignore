@@ -1,6 +1,9 @@
 .git
 .runtime*
 .tools
+.scannerwork
+.sonar
+.sonar-evidence
 tests/.tmp
 .env
 .local-secrets.json
@@ -9,3 +12,12 @@ deliverables
 wheelhouse
 __pycache__
 .pytest_cache
+.venv
+venv
+diagram_work
+evidence
+.env.*
+*.db
+*.sqlite*
+*.pem
+*.key

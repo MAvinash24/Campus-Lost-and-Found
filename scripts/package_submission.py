@@ -3,7 +3,7 @@ import hashlib,json,zipfile,re
 from pathlib import Path
 root=Path(__file__).resolve().parents[1]
 out=root/'deliverables';archive=out/'College_Lost_and_Found_Complete.zip'
-dirs={'.runtime','.runtime_v2','.tools','.git','data','__pycache__','.venv','.pytest_cache'}
+dirs={'.runtime','.runtime_v2','.tools','.git','data','__pycache__','.venv','.pytest_cache','.scannerwork','.sonar','.sonar-evidence'}
 files=[]
 for p in root.rglob('*'):
     if not p.is_file():continue
@@ -16,6 +16,7 @@ manifest={'archive':archive.name,'files':[]}
 for p,rel in files:
     data=p.read_bytes()
     assert not re.search(rb'ATAT[T][A-Za-z0-9_-]{30,}',data),'Unexpected Jira credential pattern in '+rel
+    assert not re.search(rb'sq[pu]_[a-f0-9]{40}',data),'Unexpected SonarQube credential pattern in '+rel
     manifest['files'].append({'path':rel,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for p,rel in files:z.write(p,rel)

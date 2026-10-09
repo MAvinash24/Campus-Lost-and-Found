@@ -1,0 +1,7 @@
+﻿Term,Meaning
+Campus user,A registered student or faculty member with the same reporting and communication permissions.
+Reporter,The authenticated creator of a lost or found report; owns its recovery action.
+Verified report,A report approved by an administrator and eligible for ordinary search.
+Recovered item,An open verified report closed by its creator after confirming return.
+Private conversation,Messages scoped to the sender and recipient of a report-related exchange.
+SRS and CIA,"Software Requirements Specification; confidentiality, integrity and availability."

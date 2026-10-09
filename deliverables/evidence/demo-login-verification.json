@@ -1,0 +1,21 @@
+{
+  "base_url": "http://127.0.0.1:8090",
+  "passed": true,
+  "checks": [
+    {
+      "role": "student",
+      "login_verified": true,
+      "administrator_route_status": 403
+    },
+    {
+      "role": "faculty",
+      "login_verified": true,
+      "administrator_route_status": 403
+    },
+    {
+      "role": "administrator",
+      "login_verified": true,
+      "administrator_route_status": 200
+    }
+  ]
+}

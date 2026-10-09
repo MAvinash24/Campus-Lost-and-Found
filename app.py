@@ -39,7 +39,8 @@ def create_app(config=None):
                       TRUSTED_HOSTS=os.getenv('TRUSTED_HOSTS', 'localhost,127.0.0.1').split(','))
     if config:
         app.config.update(config)
-    if not app.config['SECRET_KEY'] or len(app.config['SECRET_KEY']) < 32:
+    signing_secret = app.config.get('SECRET_KEY')
+    if signing_secret is None or len(signing_secret) < 32:
         raise RuntimeError('APP_SECRET must be a random secret of at least 32 characters.')
     Path(app.config['DATABASE']).parent.mkdir(parents=True, exist_ok=True)
 

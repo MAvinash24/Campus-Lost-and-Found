@@ -1,7 +1,7 @@
 Marisetti Avinash
 CH.SC.U4CYS23024
 Amrita Vishwa Vidyapeetham Chennai
-24CYS401 Secure Software Engineering
+20CYS401 Secure Software Engineering
 8 October 2026
 
 ## Purpose and implementation
@@ -88,7 +88,30 @@ Opportunity 1 replaces a raw item update with reporter authorization, state vali
 | Security work loses priority to visible features | Make authorization, input validation and privacy tests acceptance criteria; include a security review in Done. |
 | Rapid iterations create inconsistent models and backlog | Use catalog.json as the identifier authority; regenerate tables and verify a critical trace across all phases. |
 
-# Phase 2 Requirements Engineering
+# Phase 2 Requirements Engineering and Software Requirements Specification
+
+## Software Requirements Specification SRS
+
+This SRS specifies the College Lost and Found application submitted for 20CYS401. It defines the campus workflows, actors, interfaces, data, security requirements and acceptance criteria used by the implementation and verification evidence. Requirement identifiers R01–R16 remain the common reference for use cases, backlog stories and tests throughout the report.
+
+## Purpose and scope
+
+The system enables authenticated campus users to report lost or found items, search verified reports, contact a reporter privately and confirm recovery of their own report. Administrators verify or remove suspicious reports and inspect audit metadata. The application records the software workflow; a real-world handover must be confirmed by the report creator. Production campus identity federation, centrally revocable sessions and immutable external audit storage are future requirements rather than completed lab features.
+
+## Definitions and product context
+
+| Term | Meaning |
+| --- | --- |
+| Campus user | A registered student or faculty member with the same reporting and communication permissions. |
+| Reporter | The authenticated creator of a lost or found report; owns its recovery action. |
+| Verified report | A report approved by an administrator and eligible for ordinary search. |
+| Recovered item | An open verified report closed by its creator after confirming return. |
+| Private conversation | Messages scoped to the sender and recipient of a report-related exchange. |
+| SRS and CIA | Software Requirements Specification; confidentiality, integrity and availability. |
+
+The product is a server-rendered Flask application with SQLite persistence. Caddy terminates HTTPS for the Docker and Kubernetes laboratory deployments. Browser forms communicate with the application; the database is accessed only by server-side parameterized statements. A single Kubernetes application replica is used because the lab SQLite database is not shared multi-replica storage.
+
+## User classes and permissions
 
 | Stakeholder | Goal and permitted authority |
 | --- | --- |
@@ -96,6 +119,30 @@ Opportunity 1 replaces a raw item update with reporter authorization, state vali
 | Faculty | Same reporting features, with faculty role recorded; no moderation privilege. |
 | Administrator | Verify/remove suspicious reports and inspect audit metadata; no blanket private-inbox access. |
 | Operator | Provision administrator, manage secrets, containers, storage, TLS and backups; privileged operational actor. |
+
+## Operating environment assumptions and constraints
+
+| Area | Specification |
+| --- | --- |
+| Environment | A modern browser and local Docker or isolated kind Kubernetes deployment; Python Flask Gunicorn Caddy and SQLite versions are pinned in the submitted configuration. |
+| Campus identity | Lab registration records the chosen student or faculty role without independently proving membership. Campus SSO or verified institutional email is required before campus production use. |
+| Provisioning | Only the operator provisions administrators and manages runtime secrets. Public registration cannot select administrator authority. |
+| Moderation and handover | Administrators review pending reports; reporter and recipient arrange handover. Software confirmation does not prove physical possession. |
+| Persistence and recovery | SQLite volume or PVC stores private data. Operator-controlled access, backups, retention and restoration procedures are required. |
+| Deployment limits | TLS clients must trust the lab CA. Production requires a trusted campus certificate. NetworkPolicy configuration is supplied, but enforcement by the default kind CNI is not verified. |
+
+## External interfaces and data requirements
+
+| Interface or data | Required behavior |
+| --- | --- |
+| User interface | Labelled login registration browse report details contact inbox and moderation screens; show validation feedback and report state; retain keyboard focus and responsive layout. |
+| Communication interface | HTTPS protects credentials and private contact in deployed environments; form POST operations use session-bound CSRF tokens; session cookies are HttpOnly and use deployment security settings. |
+| Application interface | Server routes implement sign-in reporting search contact reply recovery and moderation. Identity ownership and message recipients are derived on the server. |
+| Storage interface | SQLite schema uses User Report Message AuditEvent and LoginAttempt records with foreign keys and constrained report states; no browser receives direct database access. |
+| Public and private data | Search exposes verified report fields without account emails. Owners can inspect their own reports. Private message bodies are available only to participants and are omitted from audit records. |
+| Report lifecycle | Creation starts pending and open. Administrator verification enables discovery. Removal hides the report. Only the creator can recover an open verified report; duplicate recovery is rejected. |
+
+## Functional requirements and acceptance criteria
 
 | ID | Requirement | Acceptance condition | Priority | Trace |
 | --- | --- | --- | --- | --- |
@@ -116,6 +163,8 @@ Opportunity 1 replaces a raw item update with reporter authorization, state vali
 | R15 | Verified delivery pipeline | Checkout build tests static check dependency audit image package; fail on errors. | Must | UC09 / US15 |
 | R16 | Accessible consistent interface | Responsive labelled controls error feedback cancel clear and progress views. | Should | UC03 / US16 |
 
+## Nonfunctional and security requirements
+
 | ID | Nonfunctional or security requirement | Verification or limitation |
 | --- | --- | --- |
 | N01 | Private messages accessible only to participants | Private-inbox and reply-ID tests; administrators do not inherit message access. |
@@ -130,6 +179,10 @@ Opportunity 1 replaces a raw item update with reporter authorization, state vali
 | N10 | Recoverable private storage | SQLite volume/PVC; backup and retention are operational deployment controls. |
 
 CIA priorities: confidentiality dominates credentials, emails, private messages and secrets; integrity dominates report ownership, moderation and recovery; availability supports search, sign-in and recovery. Authentication identifies the current database user. Authorization separately enforces administrator or reporter/participant policy. Audit records sensitive operation outcomes.
+
+## Acceptance and requirements traceability
+
+Acceptance requires the lost-report found-report verified-search private-contact reporter-only-recovery and administrator-moderation workflows to operate with the specified permissions. Negative cases must reject unauthorized updates, unrelated message access, invalid CSRF and malicious or excessive inputs. The retained 34-test result and Docker/Kubernetes HTTPS workflow evidence support the implemented lab requirements. N08 remains a performance target rather than a campus-load result; operational controls retain their stated limitations. Phase 16 provides the detailed requirement-to-use-case-to-story-to-source-and-test trace, using catalog.json as the identifier authority.
 
 # Phase 3 Requirements Analysis and UML
 
@@ -262,6 +315,10 @@ Golden Rules: identical header/navigation and typography provide consistency; Ca
 
 # Phase 7 Threat Modeling and Security Analysis
 
+## Asset Identification
+
+Assets are identified from the SRS, DFD stores D1–D4, communication flows and deployment configuration. For each asset, identify whose information or authority it represents, where it is held and which CIA property needs protection. The following inventory uses the same A1–A9 identifiers as the threat and information-flow analysis.
+
 | ID | Asset | C | I | A |
 | --- | --- | --- | --- | --- |
 | A1 | Passwords and credential verification | High | High | Medium |
@@ -273,6 +330,29 @@ Golden Rules: identical header/navigation and typography provide consistency; Ca
 | A7 | Session signing secret and CSRF identity | High | High | High |
 | A8 | SQLite volume and backups | High | High | High |
 | A9 | Build image and dependency integrity | Medium | High | High |
+
+| Asset | Owner or custodian | Location and protection objective |
+| --- | --- | --- |
+| A1 A2 Credentials and identity | Account holder; identity service and operator are custodians. | D1 users in SQLite. Protect hashes and email confidentiality; prevent forged roles or identity changes. |
+| A3 Private messages | Sender and recipient; operator controls storage. | D3 messages. Restrict application access to participants; protect body confidentiality and recipient integrity. |
+| A4 Reports and recovery | Report creator; application enforces authority. | D2 reports. Preserve creator ownership and valid pending verified removed and recovered states. |
+| A5 Moderation decisions | Administrator; application records decisions. | D2 moderator reason and state. Prevent ordinary users from verifying or removing reports. |
+| A6 Audit metadata | Administrator reviewer; operator custodian. | D4 audit events. Preserve actor object outcome and time; exclude secrets and message bodies. External immutable retention is future work. |
+| A7 Session and CSRF authority | Operator manages signing secret; application issues sessions. | Runtime secret and browser session cookie. Prevent forgery and disclosure; derive authority from the current database user. |
+| A8 Private storage and backups | Operator. | Docker volume or Kubernetes PVC and controlled backups. Protect all stored data and restore availability; at-rest encryption is operational. |
+| A9 Build and dependencies | Developer and deployment operator. | Pinned requirements container image and CI configuration. Preserve dependency and executable integrity before deployment. |
+
+## Trust Boundaries
+
+A trust boundary marks a change in who controls an input or which privileges may be used. Crossing a boundary never grants authority automatically. TB1–TB3 below match the DFD and attack-tree references; each crossing must apply the listed validation and access controls.
+
+| ID | Boundary | Trust change | Crossing data or authority | Controls and limits | Threat trace |
+| --- | --- | --- | --- | --- | --- |
+| TB1 | Browser to application | Untrusted caller and submitted text cross into server processing through the HTTPS deployment edge. | Credentials reports messages search and state-changing forms. | TLS at Caddy; authenticate current user; enforce role ownership and participant policies; session-bound CSRF; allowlisted bounded input; escaped output. Caddy-to-application HTTP stays inside the controlled deployment network or pod. | TH01 TH03 TH04 TH05 TH06 TH07 TH08 TH12 |
+| TB2 | Application to private storage | Server route authority crosses into persistent records; the database is not exposed to browsers. | D1 credentials D2 reports D3 messages D4 audit and login-attempt records. | Parameterized SQL; participant and owner predicates; foreign keys and state checks; non-root process and operator storage ACL. At-rest encryption and backup protection remain operator responsibilities. | TH02 TH03 TH05 TH09 TH10 |
+| TB3 | Operator to deployment and secrets | Privileged provisioning build and deployment actions cross into the application runtime and its storage. | Administrator provisioning signing secret image dependencies configuration volumes and backups. | Operator-only provisioning; secrets excluded from submission; pinned dependencies; restricted containers and namespace; least privilege. Hosted CI execution immutable audit and NetworkPolicy enforcement retain documented limits. | TH10 TH11 |
+
+## STRIDE threat analysis
 
 | ID | DFD | STRIDE | Threat | Impact | Control |
 | --- | --- | --- | --- | --- | --- |

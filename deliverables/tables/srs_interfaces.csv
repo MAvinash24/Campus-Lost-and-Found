@@ -1,0 +1,7 @@
+﻿Interface or data,Required behavior
+User interface,Labelled login registration browse report details contact inbox and moderation screens; show validation feedback and report state; retain keyboard focus and responsive layout.
+Communication interface,HTTPS protects credentials and private contact in deployed environments; form POST operations use session-bound CSRF tokens; session cookies are HttpOnly and use deployment security settings.
+Application interface,Server routes implement sign-in reporting search contact reply recovery and moderation. Identity ownership and message recipients are derived on the server.
+Storage interface,SQLite schema uses User Report Message AuditEvent and LoginAttempt records with foreign keys and constrained report states; no browser receives direct database access.
+Public and private data,Search exposes verified report fields without account emails. Owners can inspect their own reports. Private message bodies are available only to participants and are omitted from audit records.
+Report lifecycle,Creation starts pending and open. Administrator verification enables discovery. Removal hides the report. Only the creator can recover an open verified report; duplicate recovery is rejected.

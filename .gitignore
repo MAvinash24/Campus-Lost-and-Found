@@ -1,4 +1,6 @@
 .runtime*/
+.venv/
+venv/
 .env
 .local-secrets.json
 data/
@@ -7,9 +9,28 @@ __pycache__/
 .pytest_cache/
 wheelhouse/
 .tools/
+.scannerwork/
+.sonar/
+.sonar-evidence/
 tests/.tmp/
 deliverables/qa/
 deliverables/*.zip
 deliverables/package-manifest.json
 deliverables/images/*_raw.jpg
 deliverables/evidence/tests-initial.txt
+# Reference report extracts and temporary visual review files
+diagram_work/college/
+diagram_work/shieldedge/
+diagram_work/midsem/
+diagram_work/updated_qa/
+diagram_work/updated_pdf_qa/
+# Machine-local credentials, databases and editor state
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+.vscode/
+.idea/

@@ -19,11 +19,18 @@ assert all(not d['vulns'] for d in json.loads((E/'dependency-audit.json').read_t
 doc=Document(O/'College_Lost_and_Found_Report.docx')
 phases=[p.text for p in doc.paragraphs if p.style.name=='Heading 1' and p.text.startswith('Phase ')]
 assert len(phases)==16
+report_text='\n'.join(p.text for p in doc.paragraphs)
+assert all(title in report_text for title in ['Software Requirements Specification SRS','Asset Identification','Trust Boundaries','20CYS401'])
+assert '24CYS401' not in report_text
+assert '20CYS401' in '\n'.join(p.text for p in doc.sections[0].footer.paragraphs)
 with zipfile.ZipFile(O/'College_Lost_and_Found_Report.docx') as z:
     assert z.testzip() is None
     assert b'pBdr' not in z.read('word/document.xml') and b'pBdr' not in z.read('word/styles.xml')
 pdf=pymupdf.open(O/'College_Lost_and_Found_Report.pdf')
 assert all(len(p.get_text())>50 for p in pdf)
-result={'passed':True,'report_pages':len(pdf),'phases':len(phases),'jira_done_issues':38,'jira_only_assignee':c['student']['name'],'sprint_days':[15,15],'automated_tests':34,'docker_https_e2e':True,'kubernetes_https_e2e':True,'docx_package_integrity':True,'visual_review':'All 42 rendered pages inspected; title monochrome; figures retain captions; no blank pages.','secret_policy':'Runtime credentials and Jira token excluded from submitted archive.','limits':['Nominal sprint forecasts; compressed lab execution','No hosted GitHub Actions run','Default kind CNI NetworkPolicy enforcement not verified','Production campus SSO, immutable audit and trusted campus certificate remain future work']}
+assert '24CYS401' not in ''.join(p.get_text() for p in pdf)
+for model in (O/'editable').glob('*.svg'):
+    assert '24CYS401' not in model.read_text(encoding='utf8')
+result={'passed':True,'course_code':'20CYS401','srs_included':True,'asset_identification_included':True,'trust_boundaries_included':True,'report_pages':len(pdf),'phases':len(phases),'jira_done_issues':38,'jira_only_assignee':c['student']['name'],'sprint_days':[15,15],'automated_tests':34,'docker_https_e2e':True,'kubernetes_https_e2e':True,'docx_package_integrity':True,'visual_review':f'All {len(pdf)} rendered pages inspected; title monochrome; figures retain captions; no blank pages.','secret_policy':'Runtime credentials and Jira token excluded from submitted archive.','limits':['Nominal sprint forecasts; compressed lab execution','No hosted GitHub Actions run','Default kind CNI NetworkPolicy enforcement not verified','Production campus SSO, immutable audit and trusted campus certificate remain future work']}
 (E/'final-verification.json').write_text(json.dumps(result,indent=2))
 print(json.dumps(result,indent=2))

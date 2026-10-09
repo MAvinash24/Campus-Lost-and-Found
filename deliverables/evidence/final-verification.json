@@ -1,6 +1,10 @@
 {
   "passed": true,
-  "report_pages": 42,
+  "course_code": "20CYS401",
+  "srs_included": true,
+  "asset_identification_included": true,
+  "trust_boundaries_included": true,
+  "report_pages": 46,
   "phases": 16,
   "jira_done_issues": 38,
   "jira_only_assignee": "Marisetti Avinash",
@@ -12,7 +16,7 @@
   "docker_https_e2e": true,
   "kubernetes_https_e2e": true,
   "docx_package_integrity": true,
-  "visual_review": "All 42 rendered pages inspected; title monochrome; figures retain captions; no blank pages.",
+  "visual_review": "All 46 rendered pages inspected; title monochrome; figures retain captions; no blank pages.",
   "secret_policy": "Runtime credentials and Jira token excluded from submitted archive.",
   "limits": [
     "Nominal sprint forecasts; compressed lab execution",

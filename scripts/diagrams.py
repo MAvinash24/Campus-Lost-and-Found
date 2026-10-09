@@ -21,7 +21,7 @@ class Diagram:
         ET.SubElement(self.root,'mxCell',id='0');ET.SubElement(self.root,'mxCell',id='1',parent='0')
         self.nodes={};self.count=0
         self.text(width/2,55,title,42,True)
-        self.text(width/2,height-45,'College Lost and Found  |  24CYS401  |  Marisetti Avinash  |  CH.SC.U4CYS23024',24)
+        self.text(width/2,height-45,'College Lost and Found  |  20CYS401  |  Marisetti Avinash  |  CH.SC.U4CYS23024',24)
 
     def text(self,x,y,text,size=30,bold=False,center=True):
         font=ImageFont.truetype(BOLD if bold else FONT,size)
@@ -100,7 +100,7 @@ def build():
     d.box('campus',60,650,280,190,'Campus user','actor',size=27)
     d.box('admin',60,1050,280,110,'Administrator','actor')
     cases=[('UC01',550,200,'UC01 Register / sign in'),('UC02',550,390,'UC02 Report lost / found'),('UC03',550,580,'UC03 Search / view'),('UC04',550,770,'UC04 Contact / reply'),('UC05',550,960,'UC05 Mark recovered'),('UC06',550,1150,'UC06 Verify / remove'),('UC07',1130,200,'UC07 Track own reports'),('UC08',1130,1310,'UC08 Review audit'),('validate',1500,390,'Validate input'),('owner',1500,960,'Authorize owner'),('audit',1500,1150,'Record decision')]
-    for id,x,y,t in cases:d.box(id,x,y,480 if id.startswith('UC') else 480,110,t,'ellipse',size=27)
+    for id,x,y,t in cases:d.box(id,x,y,480,110,t,'ellipse',size=27)
     for actor in ['student','faculty']:d.edge(actor,'campus',start='bottom',end='top',arrow='generalization')
     for uc in ['UC01','UC02','UC03','UC04','UC05']:d.edge('campus',uc,arrow=False)
     d.edge('campus','UC07',start='right',end='top',arrow=False,via=[(380,745),(380,160),(1370,160)])

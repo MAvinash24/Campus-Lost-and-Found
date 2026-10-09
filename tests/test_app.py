@@ -3,6 +3,7 @@ import secrets
 import sqlite3
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 from app import can_manage, create_app, now, validate_text
@@ -12,6 +13,21 @@ TEST_HASH = generate_password_hash('TestPassphrase!123',method='scrypt')
 
 
 class CampusTests(unittest.TestCase):
+    def test_signing_secret_fails_closed(self):
+        for value in ['', 'x' * 31]:
+            with self.subTest(secret_length=len(value)), patch.dict('os.environ', {'APP_SECRET': value}):
+                with self.assertRaises(RuntimeError):
+                    create_app({'DATABASE': str(Path(self.tmp.name) / 'guard.db')})
+        with patch.dict('os.environ', {'APP_SECRET': ''}):
+            with self.assertRaises(RuntimeError):
+                create_app({'SECRET_KEY': None, 'DATABASE': str(Path(self.tmp.name) / 'guard.db')})
+            valid = secrets.token_hex(32)
+            app = create_app({'TESTING': True, 'SECRET_KEY': valid, 'DATABASE': str(Path(self.tmp.name) / 'override.db')})
+            self.assertEqual(app.secret_key, valid)
+        with patch.dict('os.environ', {'APP_SECRET': secrets.token_hex(32)}):
+            app = create_app({'TESTING': True, 'DATABASE': str(Path(self.tmp.name) / 'environment.db')})
+            self.assertGreaterEqual(len(app.secret_key), 32)
+
     def setUp(self):
         Path('tests/.tmp').mkdir(exist_ok=True)
         self.tmp = tempfile.TemporaryDirectory(dir='tests/.tmp')
@@ -76,6 +92,22 @@ class CampusTests(unittest.TestCase):
 
     def test_csrf_required(self):
         self.assertEqual(self.client.post('/login',data={'email':'alice@example.edu'}).status_code,400)
+
+    def test_csrf_rejects_all_mutation_routes(self):
+        item = self.report(verified=True)
+        other_token = self.csrf(self.app.test_client())
+        paths = ['/register', '/login', '/logout', '/report',
+                 f'/items/{item}/recover', f'/items/{item}/contact',
+                 '/messages/1/reply', f'/admin/items/{item}']
+        for path in paths:
+            for token in [None, 'invalid', other_token]:
+                with self.subTest(path=path, token_kind='missing' if token is None else 'wrong'):
+                    self.assertEqual(self.client.post(path, data={} if token is None else {'csrf': token}).status_code, 400)
+        for path in ['/logout', f'/items/{item}/recover', f'/items/{item}/contact', '/messages/1/reply', f'/admin/items/{item}']:
+            self.assertEqual(self.client.get(path).status_code, 405)
+        with self.app.app_context():
+            self.assertEqual(self.app.db().execute('SELECT status FROM reports WHERE id=?', (item,)).fetchone()[0], 'open')
+            self.assertEqual(self.app.db().execute('SELECT count(*) FROM messages').fetchone()[0], 0)
 
     def test_login_session_rotation(self):
         old=self.csrf();self.login()
